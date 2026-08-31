@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -19,10 +20,11 @@
         }
 
         body {
-            font-family: Tahoma, Arial, sans-serif;
+            font-family: Tahoma, "Segoe UI", Arial, sans-serif;
             background: #f7f4ec;
             color: #28251f;
-            line-height: 2;
+            line-height: 2.05;
+            font-size: 16px;
         }
 
         /* Header */
@@ -39,12 +41,12 @@
         .header-inner {
             width: min(1150px, 92%);
             margin: auto;
-            padding: 25px 0 20px;
+            padding: 23px 0 18px;
             text-align: center;
         }
 
         .main-title {
-            font-size: clamp(30px, 5vw, 52px);
+            font-size: clamp(29px, 5vw, 50px);
             line-height: 1.4;
             font-weight: 800;
             margin-bottom: 18px;
@@ -112,9 +114,10 @@
         }
 
         .section-title h2 {
-            font-size: clamp(25px, 4vw, 35px);
+            font-size: clamp(25px, 4vw, 34px);
             color: #29251c;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 800;
         }
 
         .gold-line {
@@ -146,22 +149,15 @@
             color: #e5bd4e;
             font-size: clamp(25px, 4vw, 37px);
             margin-bottom: 25px;
+            line-height: 1.7;
         }
 
         .hero-box p {
             color: #ddd5c5;
             font-size: 17px;
-            line-height: 2.3;
-        }
-
-        /* Cards */
-
-        .white-box {
-            background: #ffffff;
-            border: 1px solid #e8dfca;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 12px 35px rgba(55,45,20,.06);
+            line-height: 2.35;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         /* Process */
@@ -174,6 +170,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+            align-items: stretch;
         }
 
         .step {
@@ -182,6 +179,8 @@
             border-radius: 18px;
             border: 1px solid #e4d9c0;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .step-number {
@@ -195,11 +194,14 @@
             font-size: 19px;
             font-weight: bold;
             margin-bottom: 18px;
+            flex-shrink: 0;
         }
 
         .step p {
             color: #514b40;
-            font-size: 15px;
+            font-size: 16px;
+            line-height: 2.15;
+            text-align: justify;
         }
 
         /* Income */
@@ -225,6 +227,9 @@
         .income-box p {
             color: #d9d0bf;
             margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 2.15;
+            text-align: justify;
         }
 
         .income-list {
@@ -238,6 +243,9 @@
             padding: 15px 18px;
             margin-bottom: 12px;
             color: #eee5d4;
+            font-size: 16px;
+            line-height: 2;
+            text-align: justify;
         }
 
         .income-list li::before {
@@ -266,6 +274,8 @@
         .cooperation-box p {
             color: #555044;
             font-size: 16px;
+            line-height: 2.2;
+            text-align: justify;
         }
 
         .enter-button {
@@ -309,8 +319,10 @@
 
         .security-box p {
             color: #d7cebd;
-            font-size: 15px;
+            font-size: 16px;
+            line-height: 2.25;
             margin-bottom: 20px;
+            text-align: justify;
         }
 
         /* Benefits */
@@ -329,8 +341,11 @@
             background: white;
             border: 1px solid #e2d7bf;
             border-radius: 15px;
-            padding: 18px 20px;
+            padding: 20px;
             color: #4f493e;
+            font-size: 16px;
+            line-height: 2.05;
+            text-align: justify;
         }
 
         .benefit::before {
@@ -358,12 +373,16 @@
 
         @media (max-width: 800px) {
 
+            body {
+                font-size: 15px;
+            }
+
             .header-inner {
                 padding: 18px 0 14px;
             }
 
             .main-title {
-                font-size: 28px;
+                font-size: 27px;
                 margin-bottom: 15px;
             }
 
@@ -385,9 +404,27 @@
                 padding: 60px 0;
             }
 
+            .hero-box {
+                width: 100%;
+            }
+
             .hero-box p {
                 font-size: 15px;
-                text-align: justify;
+                line-height: 2.2;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .step p,
+            .income-box p,
+            .income-list li,
+            .benefit,
+            .cooperation-box p,
+            .security-box p {
+                font-size: 15px;
+                line-height: 2.15;
             }
 
             .white-box,
@@ -397,12 +434,16 @@
                 padding: 25px 20px;
             }
 
-            .steps {
+            .benefits {
                 grid-template-columns: 1fr;
             }
 
-            .benefits {
-                grid-template-columns: 1fr;
+            .section-title {
+                margin-bottom: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 25px;
             }
         }
     </style>
@@ -466,7 +507,7 @@
 </section>
 
 
-<!-- نحوه کار -->
+<!-- فرایند -->
 
 <section class="process-section" id="process">
 
@@ -527,7 +568,7 @@
 </section>
 
 
-<!-- درآمد -->
+<!-- درآمد و کمیسیون -->
 
 <section class="income-section" id="income">
 
