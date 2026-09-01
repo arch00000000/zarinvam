@@ -60,7 +60,6 @@
       position: relative;
       z-index: 2;
       font-size: clamp(2rem, 5vw, 4rem);
-      margin-bottom: 25px;
       line-height: 1.5;
       font-weight: 800;
     }
@@ -73,31 +72,9 @@
       color: #d4af37;
     }
 
-    .guide {
-      position: relative;
-      z-index: 2;
-      color: #ddd;
-      font-size: 1rem;
-      margin-top: 10px;
-    }
-
-    .arrow {
-      display: block;
-      color: #d4af37;
-      font-size: 2rem;
-      margin-top: 10px;
-      animation: arrowMove 1.5s ease-in-out infinite;
-    }
-
-    @keyframes arrowMove {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(10px);
-      }
-    }
+    /* =========================
+       HEADER ANIMATIONS
+    ========================== */
 
     @keyframes headerPulse {
       0%, 100% {
@@ -108,101 +85,6 @@
       50% {
         transform: scale(1.05);
         opacity: 0.8;
-      }
-    }
-
-    /* =========================
-       STICKY MENU
-    ========================== */
-
-    .menu-wrapper {
-      position: sticky;
-      top: 15px;
-      z-index: 1000;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      pointer-events: none;
-      margin-top: 25px;
-      margin-bottom: 60px;
-    }
-
-    .menu {
-      pointer-events: auto;
-      width: min(92%, 520px);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .menu a {
-      position: relative;
-      overflow: hidden;
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      background: #111;
-      border: 1px solid rgba(212,175,55,0.5);
-      border-radius: 16px;
-      padding: 13px 18px;
-      font-weight: bold;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-      transition: 0.3s ease;
-    }
-
-    .menu a::before,
-    .menu a::after {
-      content: "";
-      position: absolute;
-      width: 130%;
-      height: 90%;
-      left: -15%;
-      background: rgba(212,175,55,0.12);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .menu a::before {
-      top: -65%;
-      animation: softWave 5s ease-in-out infinite;
-    }
-
-    .menu a::after {
-      bottom: -65%;
-      animation: softWaveReverse 6s ease-in-out infinite;
-    }
-
-    .menu a:hover {
-      transform: translateY(-3px);
-      border-color: #d4af37;
-      box-shadow: 0 10px 30px rgba(212,175,55,0.18);
-    }
-
-    .menu a.active {
-      background: linear-gradient(135deg, #d4af37, #a67c00);
-      color: #111;
-      border-color: #f5d76e;
-      box-shadow: 0 8px 30px rgba(212,175,55,0.3);
-    }
-
-    @keyframes softWave {
-      0%, 100% {
-        transform: translateX(-8%) rotate(0deg);
-      }
-
-      50% {
-        transform: translateX(8%) rotate(4deg);
-      }
-    }
-
-    @keyframes softWaveReverse {
-      0%, 100% {
-        transform: translateX(8%) rotate(0deg);
-      }
-
-      50% {
-        transform: translateX(-8%) rotate(-4deg);
       }
     }
 
@@ -245,6 +127,232 @@
     }
 
     /* =========================
+       GUIDE BEFORE MENU
+    ========================== */
+
+    .guide-wrapper {
+      width: min(92%, 520px);
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .guide {
+      color: #7b641e;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .guide .arrow {
+      display: block;
+      color: #d4af37;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-top: 3px;
+      animation: arrowMove 1.5s ease-in-out infinite;
+    }
+
+    @keyframes arrowMove {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(7px);
+      }
+    }
+
+    /* =========================
+       STICKY MENU
+    ========================== */
+
+    .menu-wrapper {
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+      margin-bottom: 60px;
+    }
+
+    .menu {
+      pointer-events: auto;
+      width: min(92%, 520px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* =========================
+       MENU BUTTONS
+    ========================== */
+
+    .menu a {
+      position: relative;
+      overflow: hidden;
+
+      display: block;
+      text-align: center;
+      text-decoration: none;
+
+      color: #fff;
+      background: #111;
+
+      border: 1px solid rgba(212,175,55,0.5);
+      border-radius: 16px;
+
+      padding: 13px 18px;
+
+      font-weight: bold;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.12);
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    /*
+       موج نرم پس‌زمینه
+       این موج به شکل یک نوار نور
+       داخل دکمه حرکت می‌کند.
+    */
+
+    .menu a::before {
+      content: "";
+
+      position: absolute;
+
+      top: -120%;
+      right: -35%;
+
+      width: 170%;
+      height: 320%;
+
+      background:
+        linear-gradient(
+          115deg,
+          transparent 35%,
+          rgba(212,175,55,0.03) 42%,
+          rgba(212,175,55,0.14) 50%,
+          rgba(245,215,110,0.06) 58%,
+          transparent 65%
+        );
+
+      transform: rotate(-8deg);
+
+      animation: menuWave 7s ease-in-out infinite;
+
+      pointer-events: none;
+    }
+
+    .menu a::after {
+      content: "";
+
+      position: absolute;
+
+      width: 80%;
+      height: 2px;
+
+      right: -90%;
+      bottom: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(212,175,55,0.55),
+          transparent
+        );
+
+      filter: blur(1px);
+
+      animation: menuLight 5s ease-in-out infinite;
+
+      pointer-events: none;
+    }
+
+    @keyframes menuWave {
+
+      0% {
+        transform:
+          translateX(0)
+          rotate(-8deg);
+        opacity: 0.25;
+      }
+
+      50% {
+        transform:
+          translateX(-20%)
+          rotate(-4deg);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform:
+          translateX(0)
+          rotate(-8deg);
+        opacity: 0.25;
+      }
+
+    }
+
+    @keyframes menuLight {
+
+      0% {
+        right: -90%;
+        opacity: 0;
+      }
+
+      25% {
+        opacity: 0.3;
+      }
+
+      50% {
+        right: 110%;
+        opacity: 0.65;
+      }
+
+      75% {
+        opacity: 0.2;
+      }
+
+      100% {
+        right: 110%;
+        opacity: 0;
+      }
+
+    }
+
+    .menu a:hover {
+      transform: translateY(-3px);
+
+      border-color: #d4af37;
+
+      box-shadow:
+        0 10px 30px rgba(212,175,55,0.18);
+    }
+
+    .menu a.active {
+      background:
+        linear-gradient(
+          135deg,
+          #d4af37,
+          #a67c00
+        );
+
+      color: #111;
+
+      border-color: #f5d76e;
+
+      box-shadow:
+        0 8px 30px rgba(212,175,55,0.3);
+    }
+
+    /* =========================
        PROCESS
     ========================== */
 
@@ -256,23 +364,36 @@
 
     .process-item {
       position: relative;
-      padding: 22px 25px 22px 25px;
+
+      padding: 22px 25px;
+
       background: #faf7ef;
+
       border-right: 5px solid #d4af37;
+
       border-radius: 15px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+
+      box-shadow:
+        0 5px 18px rgba(0,0,0,0.05);
     }
 
     .process-item::before {
       content: "";
+
       position: absolute;
+
       right: -15px;
       top: 25px;
+
       width: 25px;
       height: 25px;
+
       background: #d4af37;
+
       border-radius: 50%;
-      box-shadow: 0 0 0 5px #f4efe3;
+
+      box-shadow:
+        0 0 0 5px #f4efe3;
     }
 
     .process-item p {
@@ -286,31 +407,46 @@
     .wave-section {
       width: 100%;
       height: 100px;
+
       margin: -20px 0 60px;
+
       overflow: hidden;
       position: relative;
     }
 
     .wave-section::before {
       content: "";
+
       position: absolute;
+
       width: 120%;
       height: 130px;
+
       left: -10%;
       top: 0;
+
       background: rgba(212,175,55,0.08);
+
       border-radius: 50%;
-      animation: largeWave 8s ease-in-out infinite;
+
+      animation:
+        largeWave 8s ease-in-out infinite;
     }
 
     @keyframes largeWave {
+
       0%, 100% {
-        transform: translateX(-2%) rotate(0deg);
+        transform:
+          translateX(-2%)
+          rotate(0deg);
       }
 
       50% {
-        transform: translateX(2%) rotate(2deg);
+        transform:
+          translateX(2%)
+          rotate(2deg);
       }
+
     }
 
     /* =========================
@@ -319,9 +455,13 @@
 
     .income-box {
       background: #111;
+
       color: white;
+
       border-radius: 20px;
+
       padding: 30px;
+
       border: 1px solid rgba(212,175,55,0.5);
     }
 
@@ -332,28 +472,44 @@
 
     .income-list {
       list-style: none;
+
       display: flex;
       flex-direction: column;
+
       gap: 15px;
+
       margin-top: 20px;
     }
 
     .income-list li {
-      background: rgba(212,175,55,0.08);
-      border: 1px solid rgba(212,175,55,0.35);
+      background:
+        rgba(212,175,55,0.08);
+
+      border:
+        1px solid rgba(212,175,55,0.35);
+
       padding: 15px 20px;
+
       border-radius: 12px;
+
       color: #fff;
+
       position: relative;
+
       padding-right: 45px;
     }
 
     .income-list li::before {
       content: "✓";
+
       position: absolute;
+
       right: 15px;
+
       color: #d4af37;
+
       font-size: 1.2rem;
+
       font-weight: bold;
     }
 
@@ -371,21 +527,39 @@
 
     .enter-btn {
       display: inline-block;
+
       margin-top: 15px;
+
       padding: 14px 55px;
+
       border-radius: 15px;
-      background: linear-gradient(135deg, #d4af37, #a67c00);
+
+      background:
+        linear-gradient(
+          135deg,
+          #d4af37,
+          #a67c00
+        );
+
       color: #111;
+
       text-decoration: none;
+
       font-weight: bold;
+
       font-size: 1.05rem;
-      box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+
+      box-shadow:
+        0 8px 25px rgba(212,175,55,0.25);
+
       transition: 0.3s ease;
     }
 
     .enter-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(212,175,55,0.35);
+
+      box-shadow:
+        0 12px 30px rgba(212,175,55,0.35);
     }
 
     /* =========================
@@ -395,20 +569,26 @@
     .security-icon {
       width: 92px;
       height: 92px;
+
       margin: 0 auto 15px;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: shieldFloat 3s ease-in-out infinite;
+
+      animation:
+        shieldFloat 3s ease-in-out infinite;
     }
 
     .security-icon svg {
       width: 100%;
       height: 100%;
+
       overflow: visible;
     }
 
     @keyframes shieldFloat {
+
       0%, 100% {
         transform: translateY(0);
       }
@@ -416,6 +596,7 @@
       50% {
         transform: translateY(-5px);
       }
+
     }
 
     /* =========================
@@ -424,32 +605,49 @@
 
     .benefits-list {
       list-style: none;
+
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 15px;
     }
 
     .benefits-list li {
       background: #faf7ef;
-      border: 1px solid rgba(212,175,55,0.3);
+
+      border:
+        1px solid rgba(212,175,55,0.3);
+
       border-radius: 14px;
+
       padding: 18px 20px;
+
       position: relative;
+
       padding-right: 45px;
+
       transition: 0.3s ease;
     }
 
     .benefits-list li::before {
       content: "✦";
+
       position: absolute;
+
       right: 15px;
+
       color: #d4af37;
+
       font-size: 1.2rem;
     }
 
     .benefits-list li:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.06);
     }
 
     /* =========================
@@ -458,9 +656,13 @@
 
     footer {
       background: #0b0b0b;
+
       color: #ccc;
+
       text-align: center;
+
       padding: 35px 20px;
+
       margin-top: 40px;
     }
 
@@ -483,8 +685,16 @@
         font-size: 2rem;
       }
 
+      .guide-wrapper {
+        width: 92%;
+      }
+
+      .guide {
+        font-size: 0.88rem;
+      }
+
       .menu-wrapper {
-        margin-top: 15px;
+        top: 10px;
         margin-bottom: 45px;
       }
 
@@ -499,8 +709,12 @@
 
       section {
         width: 92%;
-        padding: 32px 20px;
+
+        padding:
+          32px 20px;
+
         border-radius: 20px;
+
         margin-bottom: 55px;
       }
 
@@ -529,11 +743,13 @@
         width: 78px;
         height: 78px;
       }
+
     }
   </style>
 </head>
 
 <body>
+
 
   <!-- =========================
        HEADER
@@ -545,11 +761,6 @@
       <span class="white">زرین وام |</span>
       <span class="gold">درآمد از کارشناسی طلا</span>
     </h1>
-
-    <div class="guide">
-      برای مطالعه هر قسمت کلیک کنید
-      <span class="arrow">↓</span>
-    </div>
 
   </header>
 
@@ -575,23 +786,51 @@
 
 
   <!-- =========================
+       GUIDE
+       دقیقا قبل از سه گزینه
+  ========================== -->
+
+  <div class="guide-wrapper">
+
+    <div class="guide">
+
+      برای مطالعه هر قسمت کلیک کنید
+
+      <span class="arrow">
+        ↓
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
        STICKY MENU
-       بعد از معرفی زرین وام
   ========================== -->
 
   <div class="menu-wrapper">
 
     <nav class="menu">
 
-      <a href="#process" data-target="process">
+      <a
+        href="#process"
+        data-target="process"
+      >
         نحوه کار زرین وام
       </a>
 
-      <a href="#income" data-target="income">
+      <a
+        href="#income"
+        data-target="income"
+      >
         درآمد و کمیسیون شعب
       </a>
 
-      <a href="#cooperation" data-target="cooperation">
+      <a
+        href="#cooperation"
+        data-target="cooperation"
+      >
         ورود به فرم همکاری
       </a>
 
@@ -718,8 +957,6 @@
   ========================== -->
 
   <section id="security">
-
-    <!-- آیکون سپر امنیت -->
 
     <div class="security-icon">
 
@@ -954,53 +1191,57 @@
        ACTIVE MENU
     ========================== */
 
-    const sections = document.querySelectorAll(
-      "#process, #income, #cooperation"
-    );
-
-    const menuLinks = document.querySelectorAll(
-      ".menu a"
-    );
+    const sections =
+      document.querySelectorAll(
+        "#process, #income, #cooperation"
+      );
 
 
-    const observer = new IntersectionObserver(
-
-      (entries) => {
-
-        entries.forEach((entry) => {
-
-          if (entry.isIntersecting) {
-
-            menuLinks.forEach((link) => {
-
-              link.classList.remove("active");
-
-            });
+    const menuLinks =
+      document.querySelectorAll(
+        ".menu a"
+      );
 
 
-            const activeLink =
-              document.querySelector(
-                `.menu a[data-target="${entry.target.id}"]`
-              );
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              menuLinks.forEach((link) => {
+
+                link.classList.remove("active");
+
+              });
 
 
-            if (activeLink) {
+              const activeLink =
+                document.querySelector(
+                  `.menu a[data-target="${entry.target.id}"]`
+                );
 
-              activeLink.classList.add("active");
+
+              if (activeLink) {
+
+                activeLink.classList.add("active");
+
+              }
 
             }
 
-          }
+          });
 
-        });
+        },
 
-      },
+        {
+          threshold: 0.45
+        }
 
-      {
-        threshold: 0.45
-      }
-
-    );
+      );
 
 
     sections.forEach((section) => {
@@ -1012,4 +1253,4 @@
   </script>
 
 </body>
-  </html>
+</html>
