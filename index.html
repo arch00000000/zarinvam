@@ -1,2196 +1,993 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>
-زرین وام | درآمد از کارشناسی طلا
-</title>
-
-
-<style>
-
-/* =====================================
-   RESET
-===================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-body {
-
-    font-family:
-        Tahoma,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background: #f4efe3;
-
-    color: #302c25;
-
-    line-height: 2.2;
-
-    font-size: 16px;
-
-    overflow-x: hidden;
-}
-
-
-/* =====================================
-   HEADER
-===================================== */
-
-.top-header {
-
-    position: relative;
-
-    background:
-
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(218,181,67,0.16),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(218,181,67,0.12),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #0c0c0a,
-            #211b10
-        );
-
-    padding:
-        62px 20px 48px;
-
-    text-align: center;
-
-    color: white;
-
-    overflow: hidden;
-}
-
-
-.top-header::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 350px;
-
-    height: 120px;
-
-    left: 50%;
-
-    bottom: -80px;
-
-    transform:
-        translateX(-50%);
-
-    background:
-        rgba(225,188,72,0.10);
-
-    border-radius: 50%;
-
-    filter: blur(35px);
-
-    pointer-events: none;
-}
-
-
-.title {
-
-    position: relative;
-
-    z-index: 2;
-
-    font-size:
-        clamp(30px, 6vw, 54px);
-
-    font-weight: 800;
-
-    line-height: 1.5;
-
-    letter-spacing: -1px;
-}
-
-
-.title-white {
-    color: #ffffff;
-}
-
-
-.title-gold {
-    color: #e4bd50;
-}
-
-
-/* =====================================
-   GUIDE TEXT
-===================================== */
-
-.guide-text {
-
-    position: relative;
-
-    z-index: 2;
-
-    margin-top: 12px;
-
-    color:
-        rgba(255,255,255,0.62);
-
-    font-size: 13px;
-
-    font-weight: normal;
-
-    letter-spacing: 0.2px;
-
-    line-height: 1.8;
-}
-
-
-.guide-arrow {
-
-    display: inline-block;
-
-    margin-right: 5px;
-
-    color: #dcb64a;
-
-    animation:
-        gentleArrow
-        1.8s ease-in-out
-        infinite;
-}
-
-
-@keyframes gentleArrow {
-
-    0%, 100% {
-        transform:
-            translateY(0);
-        opacity: .65;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>زرین وام | درآمد از کارشناسی طلا</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    50% {
-        transform:
-            translateY(4px);
-        opacity: 1;
+    html {
+      scroll-behavior: smooth;
     }
-}
-
-
-/* =====================================
-   STICKY MENU
-===================================== */
-
-.sticky-menu {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 9999;
-
-    padding:
-        11px 15px;
-
-    background:
-        rgba(10,10,8,0.97);
-
-    backdrop-filter:
-        blur(15px);
-
-    -webkit-backdrop-filter:
-        blur(15px);
-
-    border-bottom:
-        1px solid #4b3b1d;
-
-    box-shadow:
-        0 8px 28px
-        rgba(0,0,0,0.22);
-}
-
-
-.menu {
-
-    width:
-        min(620px, 100%);
-
-    margin:
-        auto;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap: 7px;
-}
-
-
-/* =====================================
-   MENU ITEM
-===================================== */
-
-.menu-item {
-
-    position: relative;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    min-height:
-        46px;
-
-    padding:
-        8px 18px;
-
-    border-radius:
-        12px;
-
-    border:
-        1px solid #40371f;
-
-    background:
-        linear-gradient(
-            135deg,
-            #211f19,
-            #15140f
-        );
-
-    color:
-        #ded6c7;
-
-    text-decoration:
-        none;
-
-    font-size:
-        14px;
-
-    font-weight:
-        bold;
-
-    line-height:
-        1.5;
-
-    overflow:
-        hidden;
-
-    isolation:
-        isolate;
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        color .3s ease,
-        box-shadow .3s ease;
-}
-
-
-/* =====================================
-   CONTINUOUS SOFT WAVE
-===================================== */
-
-.menu-item::before {
-
-    content: "";
-
-    position: absolute;
-
-    width:
-        240px;
-
-    height:
-        90px;
-
-    right:
-        -150px;
-
-    top:
-        50%;
-
-    transform:
-        translateY(-50%);
-
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(229,193,83,0.22),
-            rgba(229,193,83,0.08) 42%,
-            transparent 72%
-        );
-
-    filter:
-        blur(13px);
-
-    z-index:
-        -1;
-
-    animation:
-        softWave
-        4.8s
-        ease-in-out
-        infinite alternate;
-}
-
-
-.menu-item::after {
-
-    content: "";
-
-    position: absolute;
-
-    width:
-        160px;
-
-    height:
-        60px;
-
-    left:
-        -100px;
-
-    bottom:
-        -25px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(217,177,63,0.07);
-
-    filter:
-        blur(18px);
-
-    z-index:
-        -1;
-
-    animation:
-        softWaveReverse
-        6s
-        ease-in-out
-        infinite alternate;
-}
-
-
-@keyframes softWave {
-
-    0% {
-
-        right:
-            -150px;
-
-        transform:
-            translateY(-50%)
-            scale(0.85);
-    }
-
-    50% {
-
-        right:
-            25%;
-
-        transform:
-            translateY(-55%)
-            scale(1.08);
-    }
-
-    100% {
-
-        right:
-            80%;
-
-        transform:
-            translateY(-45%)
-            scale(0.95);
-    }
-}
-
-
-@keyframes softWaveReverse {
-
-    0% {
-
-        left:
-            -100px;
-
-        transform:
-            scale(.8);
-    }
-
-    100% {
-
-        left:
-            75%;
-
-        transform:
-            scale(1.15);
-    }
-}
-
-
-/* =====================================
-   NUMBER BEFORE EACH OPTION
-===================================== */
-
-.menu-item span {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        24px;
-
-    height:
-        24px;
-
-    margin-left:
-        9px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(224,187,73,0.12);
-
-    color:
-        #dfbb50;
-
-    font-size:
-        12px;
-
-    transition:
-        all .3s ease;
-}
-
-
-.menu-item:hover {
-
-    transform:
-        translateY(-2px);
-
-    border-color:
-        #816628;
-
-    color:
-        #f0d477;
-}
-
-
-/* =====================================
-   ACTIVE OPTION
-===================================== */
-
-.menu-item.active {
-
-    background:
-        linear-gradient(
-            135deg,
-            #e1b940,
-            #b98720
-        );
-
-    border-color:
-        #edce6a;
-
-    color:
-        #17130a;
-
-    box-shadow:
-        0 7px 23px
-        rgba(218,174,52,0.30);
-}
-
-
-.menu-item.active span {
-
-    background:
-        rgba(0,0,0,0.12);
-
-    color:
-        #211807;
-}
-
-
-/* موج طلایی برای گزینه فعال */
-
-.menu-item.active::before {
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(255,255,255,0.28),
-            rgba(255,255,255,0.08) 42%,
-            transparent 72%
-        );
-
-    animation-duration:
-        4s;
-}
-
-
-/* =====================================
-   SECTIONS
-===================================== */
-
-.container {
-
-    width:
-        min(1100px, 92%);
-
-    margin:
-        auto;
-}
-
-
-section {
-
-    padding:
-        85px 0;
-
-    scroll-margin-top:
-        190px;
-}
-
-
-.section-heading {
-
-    text-align:
-        center;
-
-    margin-bottom:
-        42px;
-}
-
-
-.section-heading h2 {
-
-    font-size:
-        clamp(25px, 4vw, 37px);
-
-    line-height:
-        1.7;
-
-    font-weight:
-        800;
-}
-
-
-.gold-line {
-
-    width:
-        65px;
-
-    height:
-        4px;
-
-    margin:
-        14px auto 0;
-
-    background:
-        #c99a2c;
-
-    border-radius:
-        10px;
-}
-
-
-/* =====================================
-   INTRODUCTION
-===================================== */
-
-.introduction {
-
-    background:
-
-        radial-gradient(
-            circle at 10% 25%,
-            rgba(220,183,70,0.14),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 90% 75%,
-            rgba(220,183,70,0.10),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #11100d,
-            #292112
-        );
-
-    color:
-        white;
-
-    padding:
-        78px 0 95px;
-}
-
-
-.intro-content {
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
-
-    text-align:
-        center;
-}
-
-
-.intro-content h2 {
-
-    color:
-        #e4bd50;
-
-    font-size:
-        clamp(25px, 4vw, 39px);
-
-    line-height:
-        1.7;
-
-    margin-bottom:
-        30px;
-}
-
-
-.intro-content p {
-
-    color:
-        #ded5c4;
-
-    font-size:
-        17px;
-
-    line-height:
-        2.5;
-
-    text-align:
-        justify;
-}
-
-
-/* =====================================
-   PROCESS
-===================================== */
-
-.process {
-
-    background:
-        #f0ebdf;
-}
-
-
-.steps {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        20px;
-}
-
-
-.step-card {
-
-    background:
-        #ffffff;
-
-    border:
-        1px solid #e2d8c1;
-
-    border-radius:
-        20px;
-
-    padding:
-        30px 25px;
-
-    box-shadow:
-        0 10px 30px
-        rgba(60,50,25,0.06);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-
-.step-card:hover {
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 18px 38px
-        rgba(60,50,25,0.10);
-}
-
-
-.step-number {
-
-    width:
-        48px;
-
-    height:
-        48px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    background:
-        #17150f;
-
-    color:
-        #e4bd50;
-
-    border-radius:
-        13px;
-
-    font-weight:
-        bold;
-
-    font-size:
-        19px;
-
-    margin-bottom:
-        18px;
-}
-
-
-.step-card p {
-
-    color:
-        #504a40;
-
-    font-size:
-        16px;
-
-    line-height:
-        2.3;
-
-    text-align:
-        justify;
-}
-
-
-/* =====================================
-   WAVE
-===================================== */
-
-.wave-section {
-
-    position:
-        relative;
-
-    height:
-        170px;
-
-    overflow:
-        hidden;
-
-    background:
-        #f0ebdf;
-}
-
-
-.soft-light-one {
-
-    position:
-        absolute;
-
-    width:
-        600px;
-
-    height:
-        240px;
-
-    right:
-        -160px;
-
-    top:
-        -80px;
-
-    background:
-        rgba(216,177,62,0.13);
-
-    border-radius:
-        50%;
-
-    filter:
-        blur(75px);
-
-    animation:
-        floatingOne
-        9s
-        ease-in-out
-        infinite alternate;
-}
-
-
-.soft-light-two {
-
-    position:
-        absolute;
-
-    width:
-        550px;
-
-    height:
-        220px;
-
-    left:
-        -160px;
-
-    bottom:
-        -100px;
-
-    background:
-        rgba(190,157,72,0.08);
-
-    border-radius:
-        50%;
-
-    filter:
-        blur(80px);
-
-    animation:
-        floatingTwo
-        11s
-        ease-in-out
-        infinite alternate;
-}
-
-
-@keyframes floatingOne {
-
-    from {
-
-        transform:
-            translateX(0)
-            translateY(0)
-            scale(1);
-    }
-
-    to {
-
-        transform:
-            translateX(-80px)
-            translateY(20px)
-            scale(1.12);
-    }
-}
-
-
-@keyframes floatingTwo {
-
-    from {
-
-        transform:
-            translateX(0)
-            translateY(0)
-            scale(1);
-    }
-
-    to {
-
-        transform:
-            translateX(70px)
-            translateY(-20px)
-            scale(1.10);
-    }
-}
-
-
-.wave {
-
-    position:
-        absolute;
-
-    width:
-        110%;
-
-    height:
-        120px;
-
-    left:
-        -5%;
-
-    bottom:
-        -90px;
-
-    background:
-        #11100d;
-
-    border-radius:
-        50% 50% 0 0 /
-        38% 38% 0 0;
-}
-
-
-/* =====================================
-   INCOME
-===================================== */
-
-.income {
-
-    background:
-        #11100d;
-
-    color:
-        white;
-}
-
-
-.income .section-heading h2 {
-
-    color:
-        white;
-}
-
-
-.income-box {
-
-    width:
-        min(850px, 100%);
-
-    margin:
-        auto;
-
-    padding:
-        38px;
-
-    background:
-        #1b1914;
-
-    border:
-        1px solid #4d3e20;
-
-    border-radius:
-        20px;
-}
-
-
-.income-box p {
-
-    color:
-        #ddd4c2;
-
-    font-size:
-        17px;
-
-    line-height:
-        2.35;
-
-    text-align:
-        justify;
-
-    margin-bottom:
-        25px;
-}
-
-
-.income-list {
-
-    list-style:
-        none;
-}
-
-
-.income-list li {
-
-    padding:
-        15px 18px;
-
-    margin-bottom:
-        12px;
-
-    background:
-        rgba(255,255,255,0.04);
-
-    border:
-        1px solid
-        rgba(226,190,77,0.15);
-
-    border-radius:
-        12px;
-
-    color:
-        #eee5d4;
-
-    font-size:
-        16px;
-
-    line-height:
-        2.1;
-
-    text-align:
-        justify;
-}
-
-
-.income-list li::before {
-
-    content:
-        "";
-
-    display:
-        inline-block;
-
-    width:
-        7px;
-
-    height:
-        7px;
-
-    background:
-        #e2bb4a;
-
-    border-radius:
-        50%;
-
-    margin-left:
-        12px;
-}
-
-
-/* =====================================
-   COOPERATION
-===================================== */
-
-.cooperation {
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8f2e2,
-            #eee3c7
-        );
-}
-
-
-.cooperation-box {
-
-    max-width:
-        850px;
-
-    margin:
-        auto;
-
-    background:
-        white;
-
-    padding:
-        45px 35px;
-
-    border:
-        1px solid #ded0ad;
-
-    border-radius:
-        22px;
-
-    text-align:
-        center;
-
-    box-shadow:
-        0 15px 40px
-        rgba(70,55,20,0.08);
-}
-
-
-.cooperation-box p {
-
-    color:
-        #554e42;
-
-    font-size:
-        16px;
-
-    line-height:
-        2.4;
-
-    text-align:
-        justify;
-}
-
-
-.enter-button {
-
-    display:
-        inline-block;
-
-    margin-top:
-        28px;
-
-    padding:
-        14px 52px;
-
-    border-radius:
-        12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e9c65c,
-            #b98721
-        );
-
-    color:
-        #17130a;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    font-size:
-        16px;
-
-    box-shadow:
-        0 8px 22px
-        rgba(170,125,25,0.22);
-
-    transition:
-        all .3s ease;
-}
-
-
-.enter-button:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 13px 30px
-        rgba(170,125,25,0.30);
-}
-
-
-/* =====================================
-   SECURITY
-===================================== */
-
-.security {
-
-    background:
-        #15130e;
-
-    color:
-        white;
-}
-
-
-.security .section-heading h2 {
-
-    color:
-        white;
-}
-
-
-.security-box {
-
-    max-width:
-        950px;
-
-    margin:
-        auto;
-
-    background:
-        #201d16;
-
-    border:
-        1px solid #4b3d20;
-
-    border-radius:
-        22px;
-
-    padding:
-        40px;
-}
-
-
-.security-box p {
-
-    color:
-        #d7cebd;
-
-    font-size:
-        16px;
-
-    line-height:
-        2.4;
-
-    text-align:
-        justify;
-
-    margin-bottom:
-        20px;
-}
-
-
-.security-box p:last-child {
-
-    margin-bottom:
-        0;
-}
-
-
-/* =====================================
-   BENEFITS
-===================================== */
-
-.benefits {
-
-    background:
-        #f1ecdf;
-}
-
-
-.benefit-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap:
-        15px;
-}
-
-
-.benefit-card {
-
-    background:
-        white;
-
-    border:
-        1px solid #e2d7bf;
-
-    border-radius:
-        15px;
-
-    padding:
-        20px;
-
-    color:
-        #4f493e;
-
-    font-size:
-        16px;
-
-    line-height:
-        2.2;
-
-    text-align:
-        justify;
-
-    box-shadow:
-        0 7px 20px
-        rgba(60,50,25,0.04);
-}
-
-
-.benefit-card::before {
-
-    content:
-        "";
-
-    display:
-        inline-block;
-
-    width:
-        7px;
-
-    height:
-        7px;
-
-    background:
-        #b27f19;
-
-    border-radius:
-        50%;
-
-    margin-left:
-        12px;
-}
-
-
-/* =====================================
-   FOOTER
-===================================== */
-
-footer {
-
-    background:
-        #080807;
-
-    color:
-        #aaa291;
-
-    text-align:
-        center;
-
-    padding:
-        30px 15px;
-}
-
-
-footer strong {
-
-    display:
-        block;
-
-    color:
-        #e3bd50;
-
-    font-size:
-        20px;
-
-    margin-bottom:
-        4px;
-}
-
-
-/* =====================================
-   MOBILE
-===================================== */
-
-@media (max-width: 800px) {
 
     body {
-        font-size: 15px;
+      font-family: Tahoma, "Segoe UI", Arial, sans-serif;
+      background: #f4efe3;
+      color: #222;
+      line-height: 2;
     }
 
+    /* =========================
+       HEADER
+    ========================== */
 
-    .top-header {
+    header {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(212,175,55,0.22), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(212,175,55,0.08), transparent 30%),
+        #090909;
 
-        padding:
-            45px 15px 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
     }
 
-
-    .title {
-
-        font-size:
-            28px;
+    header::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,55,0.12);
+      animation: headerPulse 5s ease-in-out infinite;
     }
 
-
-    .guide-text {
-
-        font-size:
-            12px;
-
-        margin-top:
-            9px;
+    header h1 {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(2rem, 5vw, 4rem);
+      margin-bottom: 25px;
+      line-height: 1.5;
+      font-weight: 800;
     }
 
-
-    .sticky-menu {
-
-        padding:
-            8px 10px;
+    header h1 .white {
+      color: #fff;
     }
 
+    header h1 .gold {
+      color: #d4af37;
+    }
+
+    .guide {
+      position: relative;
+      z-index: 2;
+      color: #ddd;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .arrow {
+      display: block;
+      color: #d4af37;
+      font-size: 2rem;
+      margin-top: 10px;
+      animation: arrowMove 1.5s ease-in-out infinite;
+    }
+
+    @keyframes arrowMove {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    @keyframes headerPulse {
+      0%, 100% {
+        transform: scale(0.95);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+
+    /* =========================
+       STICKY MENU
+    ========================== */
+
+    .menu-wrapper {
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+      margin-top: -55px;
+      margin-bottom: 60px;
+    }
 
     .menu {
-
-        gap:
-            5px;
+      pointer-events: auto;
+      width: min(92%, 520px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-
-    .menu-item {
-
-        min-height:
-            40px;
-
-        padding:
-            7px 10px;
-
-        font-size:
-            13px;
+    .menu a {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background: #111;
+      border: 1px solid rgba(212,175,55,0.5);
+      border-radius: 16px;
+      padding: 13px 18px;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      transition: 0.3s ease;
     }
 
-
-    .menu-item span {
-
-        width:
-            22px;
-
-        height:
-            22px;
-
-        margin-left:
-            7px;
-
-        font-size:
-            11px;
+    .menu a::before,
+    .menu a::after {
+      content: "";
+      position: absolute;
+      width: 130%;
+      height: 90%;
+      left: -15%;
+      background: rgba(212,175,55,0.12);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
+    .menu a::before {
+      top: -65%;
+      animation: softWave 5s ease-in-out infinite;
+    }
+
+    .menu a::after {
+      bottom: -65%;
+      animation: softWaveReverse 6s ease-in-out infinite;
+    }
+
+    .menu a:hover {
+      transform: translateY(-3px);
+      border-color: #d4af37;
+      box-shadow: 0 10px 30px rgba(212,175,55,0.18);
+    }
+
+    .menu a.active {
+      background: linear-gradient(135deg, #d4af37, #a67c00);
+      color: #111;
+      border-color: #f5d76e;
+      box-shadow: 0 8px 30px rgba(212,175,55,0.3);
+    }
+
+    @keyframes softWave {
+      0%, 100% {
+        transform: translateX(-8%) rotate(0deg);
+      }
+
+      50% {
+        transform: translateX(8%) rotate(4deg);
+      }
+    }
+
+    @keyframes softWaveReverse {
+      0%, 100% {
+        transform: translateX(8%) rotate(0deg);
+      }
+
+      50% {
+        transform: translateX(-8%) rotate(-4deg);
+      }
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
 
     section {
-
-        padding:
-            60px 0;
-
-        scroll-margin-top:
-            175px;
+      width: min(92%, 900px);
+      margin: 0 auto 80px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(212,175,55,0.28);
+      border-radius: 24px;
+      padding: 45px 35px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+      scroll-margin-top: 110px;
     }
 
-
-    .introduction {
-
-        padding:
-            60px 0 75px;
+    section h2 {
+      text-align: center;
+      color: #9a7411;
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      margin-bottom: 30px;
+      line-height: 1.7;
     }
 
-
-    .intro-content p {
-
-        font-size:
-            15px;
-
-        line-height:
-            2.3;
+    section p {
+      margin-bottom: 22px;
+      text-align: justify;
+      color: #333;
     }
 
+    /* =========================
+       INTRODUCTION
+    ========================== */
 
-    .steps {
-
-        grid-template-columns:
-            1fr;
+    #introduction {
+      margin-top: 30px;
     }
 
+    /* =========================
+       PROCESS
+    ========================== */
 
-    .step-card p {
-
-        font-size:
-            15px;
-
-        line-height:
-            2.25;
+    .process-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-
-    .income-box,
-    .cooperation-box,
-    .security-box {
-
-        padding:
-            25px 20px;
+    .process-item {
+      position: relative;
+      padding: 22px 25px 22px 25px;
+      background: #faf7ef;
+      border-right: 5px solid #d4af37;
+      border-radius: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
     }
 
-
-    .income-box p,
-    .income-list li,
-    .cooperation-box p,
-    .security-box p,
-    .benefit-card {
-
-        font-size:
-            15px;
-
-        line-height:
-            2.25;
+    .process-item::before {
+      content: "";
+      position: absolute;
+      right: -15px;
+      top: 25px;
+      width: 25px;
+      height: 25px;
+      background: #d4af37;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px #f4efe3;
     }
 
-
-    .benefit-grid {
-
-        grid-template-columns:
-            1fr;
+    .process-item p {
+      margin: 0;
     }
 
+    /* =========================
+       WAVE SECTION
+    ========================== */
 
     .wave-section {
-
-        height:
-            135px;
+      width: 100%;
+      height: 100px;
+      margin: -20px 0 60px;
+      overflow: hidden;
+      position: relative;
     }
 
-}
+    .wave-section::before {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 130px;
+      left: -10%;
+      top: 0;
+      background: rgba(212,175,55,0.08);
+      border-radius: 50%;
+      animation: largeWave 8s ease-in-out infinite;
+    }
 
-</style>
+    @keyframes largeWave {
+      0%, 100% {
+        transform: translateX(-2%) rotate(0deg);
+      }
 
+      50% {
+        transform: translateX(2%) rotate(2deg);
+      }
+    }
+
+    /* =========================
+       INCOME
+    ========================== */
+
+    .income-box {
+      background: #111;
+      color: white;
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(212,175,55,0.5);
+    }
+
+    .income-box p {
+      color: #eee;
+      text-align: center;
+    }
+
+    .income-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .income-list li {
+      background: rgba(212,175,55,0.08);
+      border: 1px solid rgba(212,175,55,0.35);
+      padding: 15px 20px;
+      border-radius: 12px;
+      color: #fff;
+      position: relative;
+      padding-right: 45px;
+    }
+
+    .income-list li::before {
+      content: "✓";
+      position: absolute;
+      right: 15px;
+      color: #d4af37;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* =========================
+       COOPERATION
+    ========================== */
+
+    .cooperation-box {
+      text-align: center;
+    }
+
+    .cooperation-box p {
+      text-align: center;
+    }
+
+    .enter-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 55px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #d4af37, #a67c00);
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05rem;
+      box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+      transition: 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(212,175,55,0.35);
+    }
+
+    /* =========================
+       SECURITY ICON
+    ========================== */
+
+    .security-icon {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: shieldFloat 3s ease-in-out infinite;
+    }
+
+    .security-icon svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    @keyframes shieldFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* =========================
+       BENEFITS
+    ========================== */
+
+    .benefits-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .benefits-list li {
+      background: #faf7ef;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 14px;
+      padding: 18px 20px;
+      position: relative;
+      padding-right: 45px;
+      transition: 0.3s ease;
+    }
+
+    .benefits-list li::before {
+      content: "✦";
+      position: absolute;
+      right: 15px;
+      color: #d4af37;
+      font-size: 1.2rem;
+    }
+
+    .benefits-list li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #0b0b0b;
+      color: #ccc;
+      text-align: center;
+      padding: 35px 20px;
+      margin-top: 40px;
+    }
+
+    footer strong {
+      color: #d4af37;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
+
+      header {
+        min-height: 85vh;
+        padding: 30px 15px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .menu-wrapper {
+        margin-top: -40px;
+        margin-bottom: 45px;
+      }
+
+      .menu {
+        width: 92%;
+      }
+
+      .menu a {
+        padding: 11px 12px;
+        font-size: 0.9rem;
+      }
+
+      section {
+        width: 92%;
+        padding: 32px 20px;
+        border-radius: 20px;
+        margin-bottom: 55px;
+      }
+
+      section h2 {
+        font-size: 1.45rem;
+      }
+
+      section p {
+        text-align: right;
+        font-size: 0.95rem;
+      }
+
+      .process-item {
+        padding: 18px 18px;
+      }
+
+      .income-box {
+        padding: 22px 17px;
+      }
+
+      .benefits-list {
+        grid-template-columns: 1fr;
+      }
+
+      .security-icon {
+        width: 78px;
+        height: 78px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-<!-- =====================================
-     HEADER
-===================================== -->
-
-<header class="top-header">
-
-
-    <h1 class="title">
-
-        <span class="title-white">
-            زرین وام |
-        </span>
-
-        <span class="title-gold">
-            درآمد از کارشناسی طلا
-        </span>
-
+  <header>
+    <h1>
+      <span class="white">زرین وام |</span>
+      <span class="gold">درآمد از کارشناسی طلا</span>
     </h1>
 
+    <div class="guide">
+      برای مطالعه هر قسمت کلیک کنید
+      <span class="arrow">↓</span>
+    </div>
+  </header>
 
-    <div class="guide-text">
 
-        برای مطالعه هر قسمت کلیک کنید
+  <!-- =========================
+       STICKY MENU
+  ========================== -->
 
-        <span class="guide-arrow">
-            ↓
-        </span>
+  <div class="menu-wrapper">
+    <nav class="menu">
+
+      <a href="#process" data-target="process">
+        نحوه کار زرین وام
+      </a>
+
+      <a href="#income" data-target="income">
+        درآمد و کمیسیون شعب
+      </a>
+
+      <a href="#cooperation" data-target="cooperation">
+        ورود به فرم همکاری
+      </a>
+
+    </nav>
+  </div>
+
+
+  <!-- =========================
+       INTRODUCTION
+  ========================== -->
+
+  <section id="introduction">
+
+    <h2>
+      معرفی زرین وام و جذب کارشناس طلا
+    </h2>
+
+    <p>
+      زرین وام ، یک کسب و کار نوآور با ایده پرداخت وام اعتباری بر اساس سپرده طلا است .
+      بدیهی است که پذیرش طلای کاربران نیاز به کارشناسی طلا و تأیید اصالت و ارزش مالی آن دارد .
+      زرین وام برای پیشبرد حرفه ای و قانونی اهداف خود ، شرایطی ایجاد کرده تا شما طلا فروشان
+      با استفاده از تخصص و دانش خود و کارشناسی طلای کاربران ، به درآمد بدون نیاز به درگیری سرمایه برسید .
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       PROCESS
+  ========================== -->
+
+  <section id="process">
+
+    <h2>
+      فرایند کلی زرین وام ؟
+    </h2>
+
+    <div class="process-list">
+
+      <div class="process-item">
+        <p>
+          متقاضی وام ، برای ثبت نام و کارشناسی طلای خود ، از طریق سایت زرین وام ، نوبت کارشناسی برای شعب منتخب شهر خود را دریافت می‌کند .
+        </p>
+      </div>
+
+      <div class="process-item">
+        <p>
+          پس از مراجعه کاربر ، طلای افراد توسط کارشناس زرین وام کارشناسی شده و در صورت تایید ، مشخصات طلا و اطلاعات هویتی کاربر توسط کارشناس ، در سایت ثبت میشود .
+        </p>
+      </div>
+
+      <div class="process-item">
+        <p>
+          طلای تودیع شده کاربران از ۴۸ تا نهایت ۷۲ ساعت نزد شعب بطور امانی قرار می‌گیرد و پس از تایید و طی امورات اداری ، نماینده پلتفرم نسبت به جمع آوری و انتقال به صندوق امانت بانکی اقدام می‌کند .
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="wave-section"></div>
+
+
+  <!-- =========================
+       INCOME
+  ========================== -->
+
+  <section id="income">
+
+    <h2>
+      حق الزحمه و درآمد دریافتی شعب
+    </h2>
+
+    <div class="income-box">
+
+      <p>
+        حق الزحمه و درآمد دریافتی شعب برای انجام این ۲ وظیفه اصلی است:
+      </p>
+
+      <ul class="income-list">
+
+        <li>
+          کارشناسی طلا و ثبت مشخصات طلای تایید شده
+        </li>
+
+        <li>
+          ثبت اطلاعات هویتی و شناسایی کاربر در سیستم
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       COOPERATION
+  ========================== -->
+
+  <section id="cooperation">
+
+    <div class="cooperation-box">
+
+      <h2>
+        ورود به فرم همکاری
+      </h2>
+
+      <p>
+        با شرکت در این فرم همکاری ، تعهد و مسئولیت قانونی ای برای طرفین ایجاد نمی‌شود .
+        پس از بررسی شرایط و ثبت اطلاعات ، برای تنظیم و تایید قراداد های نهایی با شما تماس خواهیم گرفت.
+      </p>
+
+      <a
+        href="#"
+        class="enter-btn"
+        onclick="showFormMessage(event)"
+      >
+        ورود
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SECURITY
+  ========================== -->
+
+  <section id="security">
+
+    <div class="security-icon">
+
+      <svg
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="آیکون امنیت"
+      >
+
+        <defs>
+
+          <linearGradient
+            id="goldShield"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop
+              offset="0%"
+              stop-color="#fff1a8"
+            />
+
+            <stop
+              offset="35%"
+              stop-color="#d4af37"
+            />
+
+            <stop
+              offset="70%"
+              stop-color="#f5d76e"
+            />
+
+            <stop
+              offset="100%"
+              stop-color="#a67c00"
+            />
+
+          </linearGradient>
+
+          <filter
+            id="shieldGlow"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
+
+            <feGaussianBlur
+              stdDeviation="2.5"
+              result="blur"
+            />
+
+            <feMerge>
+
+              <feMergeNode in="blur"/>
+
+              <feMergeNode in="SourceGraphic"/>
+
+            </feMerge>
+
+          </filter>
+
+        </defs>
+
+
+        <!-- سپر اصلی -->
+
+        <path
+          d="
+            M50 7
+            L82 19
+            V43
+            C82 64 69 82 50 92
+            C31 82 18 64 18 43
+            V19
+            Z
+          "
+          fill="rgba(212,175,55,0.12)"
+          stroke="url(#goldShield)"
+          stroke-width="4"
+          filter="url(#shieldGlow)"
+        />
+
+
+        <!-- لایه داخلی سپر -->
+
+        <path
+          d="
+            M50 17
+            L72 25
+            V43
+            C72 58 63 72 50 80
+            C37 72 28 58 28 43
+            V25
+            Z
+          "
+          fill="none"
+          stroke="#d4af37"
+          stroke-width="2"
+          opacity="0.7"
+        />
+
+
+        <!-- تیک تأیید -->
+
+        <path
+          d="
+            M35 48
+            L45 58
+            L66 37
+          "
+          fill="none"
+          stroke="#f8e7a0"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+      </svg>
 
     </div>
 
 
-</header>
+    <h2>
+      ۲ لایه امنیتی و حقوقی
+    </h2>
 
 
+    <p>
+      یکی از اهداف اصلی زرین وام ، ایجاد سازوکار های مطمئن و اصولی
+      برای جلوگیری از هرگونه ضرر و زیان و مشکلات حقوقی بخصوص برای شعب است .
+      در همین راستا هنگام پذیرش طلای کاربران بعنوان وثیقه ، علاوه بر کارشناسی
+      و اطمینان از اصالت طلا ، هویت کاربر با استفاده از ابزار های متصل به سامانه های دولتی ،
+      اعتبارسنجی می‌شود .
+    </p>
 
-<!-- =====================================
-     THREE STEP MENU
-===================================== -->
 
-<nav class="sticky-menu">
+    <p>
+      ثبت و اطمینان از هویت کاربر می‌تواند از تقلب و سو استفاده های احتمالی
+      و ضرر و زیان های وارده از آن حتی در اینده ، تا حد زیادی جلوگیری کند .
+    </p>
 
-    <div class="menu">
 
+    <p>
+      علاوه بر اعتبار سنجی کاربر توسط شعب ، اطلاعات کاربران توسط زرین وام
+      بطور کامل و مطمئن تایید می‌شود و این فرایند از ۲ لایه امنیتی عبور می‌کند
+      و با الزام ثبت و تأیید هویت کاربر ، افراد سودجو و کلاهبردار از ورود به سیستم
+      و ایجاد مشکلات حقوقی از همان لحظه اول منصرف می‌شوند .
+    </p>
 
-        <a
-            href="#process"
-            class="menu-item active"
-            data-target="process"
-        >
+  </section>
 
-            <span>
-                ۱
-            </span>
 
-            نحوه کار زرین وام
+  <!-- =========================
+       BENEFITS
+  ========================== -->
 
-        </a>
+  <section id="benefits">
 
+    <h2>
+      مزایای همکاری با زرین وام
+    </h2>
 
+    <ul class="benefits-list">
 
-        <a
-            href="#income"
-            class="menu-item"
-            data-target="income"
-        >
+      <li>
+        ایجاد جریان درآمدی مطمئن بدون نیاز به درگیری سرمایه
+      </li>
 
-            <span>
-                ۲
-            </span>
+      <li>
+        روشی هوشمندانه برای بهبود و پوشش مقدار زیادی از هزینه های جاری و ثابت فروشگاه شما
+      </li>
 
-            درآمد و کمیسیون شعب
+      <li>
+        برندینگ و افزایش اعتبار بدلیل قرار گیری فروشگاه بعنوان امین و معتمد پلتفرم
+      </li>
 
-        </a>
+      <li>
+        کسب درآمد از دانش و تخصص خود
+      </li>
 
+      <li>
+        استفاده بهینه از زمان و اوقات آزاد
+      </li>
 
+      <li>
+        ریسک صفر سرمایه در مقابل نوسانات بازار
+      </li>
 
-        <a
-            href="#cooperation"
-            class="menu-item"
-            data-target="cooperation"
-        >
+      <li>
+        افزایش نرخ ورود یا به اصطلاح پا خور شدن فروشگاه شما
+      </li>
 
-            <span>
-                ۳
-            </span>
+    </ul>
 
-            ورود به فرم همکاری
+  </section>
 
-        </a>
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-    </div>
+  <footer>
 
-</nav>
+    <p>
+      <strong>زرین وام</strong>
+      | درآمد از کارشناسی طلا
+    </p>
 
+  </footer>
 
 
-<!-- =====================================
-     INTRODUCTION
-===================================== -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
-<section class="introduction">
+  <script>
 
-    <div class="container">
+    function showFormMessage(event) {
 
-        <div class="intro-content">
+      event.preventDefault();
 
-
-            <h2>
-                معرفی زرین وام و جذب کارشناس طلا
-            </h2>
-
-
-            <p>
-
-                زرین وام ، یک کسب و کار نوآور با ایده پرداخت وام اعتباری بر اساس سپرده طلا است .
-                بدیهی است که پذیرش طلای کاربران نیاز به کارشناسی طلا و تأیید اصالت و ارزش مالی آن دارد .
-                زرین وام برای پیشبرد حرفه ای و قانونی اهداف خود ، شرایطی ایجاد کرده تا شما طلا فروشان
-                با استفاده از تخصص و دانش خود و کارشناسی طلای کاربران ، به درآمد بدون نیاز به درگیری سرمایه برسید .
-
-            </p>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     PROCESS
-===================================== -->
-
-<section
-    class="process"
-    id="process"
->
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <h2>
-                فرایند کلی زرین وام ؟
-            </h2>
-
-            <div class="gold-line"></div>
-
-        </div>
-
-
-
-        <div class="steps">
-
-
-            <article class="step-card">
-
-                <div class="step-number">
-                    ۱
-                </div>
-
-                <p>
-
-                    متقاضی وام ، برای ثبت نام و کارشناسی طلای خود ،
-                    از طریق سایت زرین وام ، نوبت کارشناسی برای شعب منتخب شهر خود را دریافت می‌کند .
-
-                </p>
-
-            </article>
-
-
-
-            <article class="step-card">
-
-                <div class="step-number">
-                    ۲
-                </div>
-
-                <p>
-
-                    پس از مراجعه کاربر ، طلای افراد توسط کارشناس زرین وام کارشناسی شده
-                    و در صورت تایید ، مشخصات طلا و اطلاعات هویتی کاربر توسط کارشناس ، در سایت ثبت میشود .
-
-                </p>
-
-            </article>
-
-
-
-            <article class="step-card">
-
-                <div class="step-number">
-                    ۳
-                </div>
-
-                <p>
-
-                    طلای تودیع شده کاربران از ۴۸ تا نهایت ۷۲ ساعت نزد شعب بطور امانی قرار می‌گیرد
-                    و پس از تایید و طی امورات اداری ، نماینده پلتفرم نسبت به جمع آوری
-                    و انتقال به صندوق امانت بانکی اقدام می‌کند .
-
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     WAVE
-===================================== -->
-
-<div class="wave-section">
-
-    <div class="soft-light-one"></div>
-
-    <div class="soft-light-two"></div>
-
-    <div class="wave"></div>
-
-</div>
-
-
-
-<!-- =====================================
-     INCOME
-===================================== -->
-
-<section
-    class="income"
-    id="income"
->
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <h2>
-                حق الزحمه و درآمد دریافتی شعب
-            </h2>
-
-            <div class="gold-line"></div>
-
-        </div>
-
-
-
-        <div class="income-box">
-
-
-            <p>
-
-                حق الزحمه و درآمد دریافتی شعب برای انجام این ۲ وظیفه اصلی است:
-
-            </p>
-
-
-            <ul class="income-list">
-
-                <li>
-                    کارشناسی طلا و ثبت مشخصات طلای تایید شده
-                </li>
-
-
-                <li>
-                    ثبت اطلاعات هویتی و شناسایی کاربر در سیستم
-                </li>
-
-            </ul>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     COOPERATION
-===================================== -->
-
-<section
-    class="cooperation"
-    id="cooperation"
->
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <h2>
-                ورود به فرم همکاری
-            </h2>
-
-            <div class="gold-line"></div>
-
-        </div>
-
-
-
-        <div class="cooperation-box">
-
-
-            <p>
-
-                با شرکت در این فرم همکاری ، تعهد و مسئولیت قانونی ای برای طرفین ایجاد نمی‌شود .
-                پس از بررسی شرایط و ثبت اطلاعات ، برای تنظیم و تایید قراداد های نهایی با شما تماس خواهیم گرفت.
-
-            </p>
-
-
-            <a
-                href="#"
-                class="enter-button"
-                onclick="
-                    alert('لینک فرم همکاری هنوز متصل نشده است.');
-                    return false;
-                "
-            >
-
-                ورود
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     SECURITY
-===================================== -->
-
-<section class="security">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <h2>
-                ۲ لایه امنیتی و حقوقی
-            </h2>
-
-            <div class="gold-line"></div>
-
-        </div>
-
-
-
-        <div class="security-box">
-
-
-            <p>
-
-                یکی از اهداف اصلی زرین وام ، ایجاد سازوکار های مطمئن و اصولی
-                برای جلوگیری از هرگونه ضرر و زیان و مشکلات حقوقی بخصوص برای شعب است .
-                در همین راستا هنگام پذیرش طلای کاربران بعنوان وثیقه ، علاوه بر کارشناسی
-                و اطمینان از اصالت طلا ، هویت کاربر با استفاده از ابزار های متصل به سامانه های دولتی ،
-                اعتبارسنجی می‌شود .
-
-            </p>
-
-
-            <p>
-
-                ثبت و اطمینان از هویت کاربر می‌تواند از تقلب و سو استفاده های احتمالی
-                و ضرر و زیان های وارده از آن حتی در اینده ، تا حد زیادی جلوگیری کند .
-
-            </p>
-
-
-            <p>
-
-                علاوه بر اعتبار سنجی کاربر توسط شعب ، اطلاعات کاربران توسط زرین وام
-                بطور کامل و مطمئن تایید می‌شود و این فرایند از ۲ لایه امنیتی عبور می‌کند
-                و با الزام ثبت و تأیید هویت کاربر ، افراد سودجو و کلاهبردار از ورود به سیستم
-                و ایجاد مشکلات حقوقی از همان لحظه اول منصرف می‌شوند .
-
-            </p>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     BENEFITS
-===================================== -->
-
-<section class="benefits">
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-            <h2>
-                مزایای همکاری با زرین وام
-            </h2>
-
-            <div class="gold-line"></div>
-
-        </div>
-
-
-
-        <div class="benefit-grid">
-
-
-            <div class="benefit-card">
-                ایجاد جریان درآمدی مطمئن بدون نیاز به درگیری سرمایه
-            </div>
-
-
-            <div class="benefit-card">
-                روشی هوشمندانه برای بهبود و پوشش مقدار زیادی از هزینه های جاری و ثابت فروشگاه شما
-            </div>
-
-
-            <div class="benefit-card">
-                برندینگ و افزایش اعتبار بدلیل قرار گیری فروشگاه بعنوان امین و معتمد پلتفرم
-            </div>
-
-
-            <div class="benefit-card">
-                کسب درآمد از دانش و تخصص خود
-            </div>
-
-
-            <div class="benefit-card">
-                استفاده بهینه از زمان و اوقات آزاد
-            </div>
-
-
-            <div class="benefit-card">
-                ریسک صفر سرمایه در مقابل نوسانات بازار
-            </div>
-
-
-            <div class="benefit-card">
-                افزایش نرخ ورود یا به اصطلاح پا خور شدن فروشگاه شما
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<footer>
-
-    <strong>
-        زرین وام
-    </strong>
-
-    <span>
-        درآمد از کارشناسی طلا
-    </span>
-
-</footer>
-
-
-
-<!-- =====================================
-     JAVASCRIPT
-===================================== -->
-
-<script>
-
-
-const menuItems =
-    document.querySelectorAll(
-        ".menu-item"
-    );
-
-
-const sections =
-    document.querySelectorAll(
-        "#process, #income, #cooperation"
-    );
-
-
-/* =====================================
-   CLICK
-===================================== */
-
-menuItems.forEach(function(item) {
-
-    item.addEventListener(
-        "click",
-        function() {
-
-            menuItems.forEach(
-                function(link) {
-
-                    link.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
-
-
-            item.classList.add(
-                "active"
-            );
-
-        }
-    );
-
-});
-
-
-
-/* =====================================
-   SCROLL OBSERVER
-===================================== */
-
-const observer =
-    new IntersectionObserver(
-
-        function(entries) {
-
-            entries.forEach(
-                function(entry) {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-
-                        menuItems.forEach(
-                            function(item) {
-
-                                item.classList.remove(
-                                    "active"
-                                );
-
-                            }
-                        );
-
-
-                        const activeItem =
-                            document.querySelector(
-                                '[data-target="' +
-                                entry.target.id +
-                                '"]'
-                            );
-
-
-                        if (activeItem) {
-
-                            activeItem.classList.add(
-                                "active"
-                            );
-
-                        }
-
-                    }
-
-                }
-            );
-
-        },
-
-        {
-
-            root: null,
-
-            threshold: 0.25,
-
-            rootMargin:
-                "-120px 0px -45% 0px"
-
-        }
-
-    );
-
-
-
-sections.forEach(
-    function(section) {
-
-        observer.observe(
-            section
-        );
+      alert("لینک فرم همکاری هنوز متصل نشده است.");
 
     }
-);
 
 
-</script>
+    /* =========================
+       ACTIVE MENU
+    ========================== */
 
+    const sections = document.querySelectorAll(
+      "#process, #income, #cooperation"
+    );
+
+    const menuLinks = document.querySelectorAll(
+      ".menu a"
+    );
+
+
+    const observer = new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            menuLinks.forEach((link) => {
+
+              link.classList.remove("active");
+
+            });
+
+
+            const activeLink =
+              document.querySelector(
+                `.menu a[data-target="${entry.target.id}"]`
+              );
+
+
+            if (activeLink) {
+
+              activeLink.classList.add("active");
+
+            }
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.45
+      }
+
+    );
+
+
+    sections.forEach((section) => {
+
+      observer.observe(section);
+
+    });
+
+  </script>
 
 </body>
-
-    </html>
+</html>
