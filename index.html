@@ -2,1021 +2,1231 @@
 <html lang="fa" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>زرین وام | درآمد از کارشناسی طلا</title>
+    <title>زرین وام | درآمد از کارشناسی طلا</title>
 
-<style>
+    <style>
 
-/* =========================
-   RESET
-========================= */
+        /* =========================
+           RESET
+        ========================= */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    font-family: Tahoma, "Segoe UI", Arial, sans-serif;
-    background: #f5f0e4;
-    color: #302b22;
-    line-height: 2.2;
-    font-size: 16px;
-    overflow-x: hidden;
-}
+        body {
+            font-family:
+                Tahoma,
+                "Segoe UI",
+                Arial,
+                sans-serif;
 
+            background: #f4efe3;
+            color: #302c25;
 
-/* =========================
-   MAIN HEADER
-========================= */
+            line-height: 2.2;
+            font-size: 16px;
 
-.main-header {
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(222,184,71,.14),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #0e0d0a,
-            #211b0f
-        );
+            overflow-x: hidden;
+        }
 
-    padding: 65px 20px 55px;
 
-    text-align: center;
+        /* =========================
+           HEADER
+        ========================= */
 
-    color: white;
-}
+        .top-header {
 
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(218,181,67,0.14),
+                    transparent 30%
+                ),
 
-.main-title {
-    font-size: clamp(30px, 6vw, 52px);
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(218,181,67,0.10),
+                    transparent 30%
+                ),
 
-    font-weight: 800;
+                linear-gradient(
+                    135deg,
+                    #0c0c0a,
+                    #211b10
+                );
 
-    line-height: 1.5;
+            padding:
+                65px 20px 70px;
 
-    margin-bottom: 10px;
-}
+            text-align: center;
 
+            color: #ffffff;
+        }
 
-.main-title .white {
-    color: #fff;
-}
 
+        .title {
 
-.main-title .gold {
-    color: #e4bb4d;
-}
+            font-size:
+                clamp(30px, 6vw, 54px);
 
+            font-weight: 800;
 
-/* =========================
-   NAVIGATION
-========================= */
+            line-height: 1.5;
 
-.nav-wrapper {
+            letter-spacing: -1px;
+        }
 
-    position: sticky;
 
-    top: 0;
+        .title-white {
+            color: #ffffff;
+        }
 
-    z-index: 1000;
 
-    background:
-        rgba(12,11,8,.96);
+        .title-gold {
+            color: #e4bd50;
+        }
 
-    backdrop-filter: blur(14px);
 
-    padding: 13px 15px;
+        /* =========================
+           STICKY NAVIGATION
+        ========================= */
 
-    border-bottom:
-        1px solid #4a3c20;
+        .sticky-menu {
 
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.18);
-}
+            position: sticky;
 
+            top: 0;
 
-.quick-nav {
+            z-index: 9999;
 
-    width: min(600px, 100%);
+            background:
+                rgba(12, 12, 10, 0.96);
 
-    margin: auto;
+            backdrop-filter:
+                blur(15px);
 
-    display: flex;
+            -webkit-backdrop-filter:
+                blur(15px);
 
-    flex-direction: column;
+            border-bottom:
+                1px solid #4c3c1d;
 
-    gap: 7px;
-}
+            box-shadow:
+                0 8px 28px
+                rgba(0,0,0,0.22);
 
+            padding:
+                12px 15px;
+        }
 
-.quick-nav a {
 
-    position: relative;
+        .menu {
 
-    display: block;
+            width:
+                min(600px, 100%);
 
-    width: 100%;
+            margin: auto;
 
-    padding: 10px 18px;
+            display: flex;
 
-    border-radius: 11px;
+            flex-direction: column;
 
-    border:
-        1px solid #40371f;
+            gap: 7px;
+        }
 
-    background:
-        linear-gradient(
-            135deg,
-            #211f19,
-            #171611
-        );
 
-    color: #ddd5c4;
+        .menu-item {
 
-    text-decoration: none;
+            position: relative;
 
-    text-align: center;
+            display: flex;
 
-    font-size: 14px;
+            align-items: center;
 
-    font-weight: bold;
+            justify-content: center;
 
-    line-height: 1.6;
+            min-height: 44px;
 
-    transition:
-        all .35s ease;
+            padding:
+                8px 15px;
 
-    overflow: hidden;
-}
+            border-radius: 11px;
 
+            border:
+                1px solid #40371f;
 
-/* موج نرم داخل گزینه */
+            background:
+                linear-gradient(
+                    135deg,
+                    #211f19,
+                    #171611
+                );
 
-.quick-nav a::before {
+            color: #ddd5c5;
 
-    content: "";
+            text-decoration: none;
 
-    position: absolute;
+            font-size: 14px;
 
-    width: 180px;
+            font-weight: bold;
 
-    height: 60px;
+            line-height: 1.5;
 
-    right: -80px;
+            overflow: hidden;
 
-    top: -30px;
+            transition:
+                all .35s ease;
+        }
 
-    background:
-        rgba(229,190,73,.09);
 
-    border-radius: 50%;
+        /* موج نور نرم */
 
-    filter: blur(15px);
+        .menu-item::before {
 
-    transition:
-        all .5s ease;
-}
+            content: "";
 
+            position: absolute;
 
-.quick-nav a:hover::before {
+            width: 180px;
 
-    right: 20%;
+            height: 70px;
 
-    background:
-        rgba(229,190,73,.18);
-}
+            right: -100px;
 
+            top: -35px;
 
-/* گزینه فعال */
+            border-radius: 50%;
 
-.quick-nav a.active {
+            background:
+                rgba(226,187,73,0.08);
 
-    background:
-        linear-gradient(
-            135deg,
-            #dfb941,
-            #b88722
-        );
+            filter:
+                blur(16px);
 
-    color: #17130a;
+            transition:
+                all .6s ease;
+        }
 
-    border-color: #e6c45b;
 
-    box-shadow:
-        0 5px 18px
-        rgba(218,174,52,.25);
-}
+        .menu-item:hover::before {
 
+            right: 35%;
 
-.quick-nav a.active::after {
+            background:
+                rgba(226,187,73,0.18);
+        }
 
-    content: "";
 
-    position: absolute;
+        .menu-item:hover {
 
-    width: 70px;
+            transform:
+                translateY(-2px);
 
-    height: 70px;
+            border-color:
+                #876b29;
 
-    left: -20px;
+            color:
+                #f3d77b;
+        }
 
-    bottom: -35px;
 
-    border-radius: 50%;
+        /* گزینه فعال */
 
-    background:
-        rgba(255,255,255,.18);
+        .menu-item.active {
 
-    filter: blur(10px);
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    #e1b940,
+                    #b88620
+                );
 
+            border-color:
+                #ebcb69;
 
-/* =========================
-   GENERAL
-========================= */
+            color:
+                #17130a;
 
-.container {
+            box-shadow:
+                0 6px 20px
+                rgba(214,170,49,0.28);
+        }
 
-    width: min(1100px, 92%);
 
-    margin: auto;
-}
+        /* =========================
+           MAIN
+        ========================= */
 
+        .container {
 
-section {
+            width:
+                min(1100px, 92%);
 
-    padding: 85px 0;
+            margin:
+                0 auto;
+        }
 
-    scroll-margin-top: 205px;
-}
 
+        section {
 
-.section-title {
+            padding:
+                85px 0;
 
-    text-align: center;
+            scroll-margin-top:
+                190px;
+        }
 
-    margin-bottom: 40px;
-}
 
+        .section-heading {
 
-.section-title h2 {
+            text-align: center;
 
-    font-size:
-        clamp(25px, 4vw, 36px);
+            margin-bottom:
+                42px;
+        }
 
-    line-height: 1.7;
 
-    font-weight: 800;
-}
+        .section-heading h2 {
 
+            font-size:
+                clamp(25px, 4vw, 37px);
 
-.gold-line {
+            line-height: 1.7;
 
-    width: 65px;
+            font-weight: 800;
+        }
 
-    height: 4px;
 
-    background: #c99b2e;
+        .gold-line {
 
-    border-radius: 10px;
+            width: 65px;
 
-    margin:
-        14px auto 0;
-}
+            height: 4px;
 
+            background:
+                #c99a2c;
 
-/* =========================
-   INTRODUCTION
-========================= */
+            border-radius:
+                10px;
 
-.hero {
+            margin:
+                14px auto 0;
+        }
 
-    background:
-        radial-gradient(
-            circle at 10% 30%,
-            rgba(219,181,68,.14),
-            transparent 30%
-        ),
 
-        radial-gradient(
-            circle at 90% 70%,
-            rgba(219,181,68,.10),
-            transparent 30%
-        ),
+        /* =========================
+           INTRODUCTION
+        ========================= */
 
-        linear-gradient(
-            135deg,
-            #11100d,
-            #292112
-        );
+        .introduction {
 
-    color: white;
+            position: relative;
 
-    padding:
-        75px 0 90px;
-}
+            background:
+                radial-gradient(
+                    circle at 10% 25%,
+                    rgba(220,183,70,0.14),
+                    transparent 30%
+                ),
 
+                radial-gradient(
+                    circle at 90% 75%,
+                    rgba(220,183,70,0.10),
+                    transparent 30%
+                ),
 
-.hero-box {
+                linear-gradient(
+                    135deg,
+                    #11100d,
+                    #292112
+                );
 
-    max-width: 900px;
+            color: white;
 
-    margin: auto;
+            padding:
+                78px 0 95px;
+        }
 
-    text-align: center;
-}
 
+        .intro-content {
 
-.hero-box h2 {
+            max-width:
+                900px;
 
-    color: #e4bd51;
+            margin:
+                auto;
 
-    font-size:
-        clamp(25px, 4vw, 38px);
+            text-align:
+                center;
+        }
 
-    margin-bottom: 30px;
-}
 
+        .intro-content h2 {
 
-.hero-box p {
+            color:
+                #e4bd50;
 
-    color: #ded5c4;
+            font-size:
+                clamp(25px, 4vw, 39px);
 
-    font-size: 17px;
+            line-height:
+                1.7;
 
-    line-height: 2.5;
+            margin-bottom:
+                30px;
+        }
 
-    text-align: justify;
-}
 
+        .intro-content p {
 
-/* =========================
-   PROCESS
-========================= */
+            color:
+                #ded5c4;
 
-.process-section {
+            font-size:
+                17px;
 
-    background: #f0ebde;
-}
+            line-height:
+                2.5;
 
+            text-align:
+                justify;
+        }
 
-.steps {
 
-    display: grid;
+        /* =========================
+           PROCESS
+        ========================= */
 
-    grid-template-columns:
-        repeat(3, 1fr);
+        .process {
 
-    gap: 20px;
-}
+            background:
+                #f0ebdf;
+        }
 
 
-.step {
+        .steps {
 
-    background: white;
+            display:
+                grid;
 
-    border:
-        1px solid #e1d7c0;
+            grid-template-columns:
+                repeat(3, 1fr);
 
-    border-radius: 20px;
+            gap:
+                20px;
+        }
 
-    padding: 30px 25px;
 
-    box-shadow:
-        0 10px 30px
-        rgba(70,55,20,.06);
+        .step-card {
 
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
+            background:
+                #ffffff;
 
+            border:
+                1px solid #e2d8c1;
 
-.step:hover {
+            border-radius:
+                20px;
 
-    transform:
-        translateY(-5px);
+            padding:
+                30px 25px;
 
-    box-shadow:
-        0 18px 35px
-        rgba(70,55,20,.10);
-}
+            box-shadow:
+                0 10px 30px
+                rgba(60,50,25,0.06);
 
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
 
-.step-number {
 
-    width: 47px;
+        .step-card:hover {
 
-    height: 47px;
+            transform:
+                translateY(-5px);
 
-    display: grid;
+            box-shadow:
+                0 18px 38px
+                rgba(60,50,25,0.10);
+        }
 
-    place-items: center;
 
-    border-radius: 13px;
+        .step-number {
 
-    background: #17150f;
+            width:
+                48px;
 
-    color: #e5bd4e;
+            height:
+                48px;
 
-    font-size: 19px;
+            display:
+                grid;
 
-    font-weight: bold;
+            place-items:
+                center;
 
-    margin-bottom: 18px;
-}
+            background:
+                #17150f;
 
+            color:
+                #e4bd50;
 
-.step p {
+            border-radius:
+                13px;
 
-    color: #504a3f;
+            font-weight:
+                bold;
 
-    font-size: 16px;
+            font-size:
+                19px;
 
-    line-height: 2.25;
+            margin-bottom:
+                18px;
+        }
 
-    text-align: justify;
-}
 
+        .step-card p {
 
-/* =========================
-   SOFT WAVE
-========================= */
+            color:
+                #504a40;
 
-.wave-area {
+            font-size:
+                16px;
 
-    position: relative;
+            line-height:
+                2.3;
 
-    height: 160px;
+            text-align:
+                justify;
+        }
 
-    overflow: hidden;
 
-    background: #f0ebde;
-}
+        /* =========================
+           WAVE / TRANSITION
+        ========================= */
 
+        .wave-section {
 
-.wave-area::before {
+            position:
+                relative;
 
-    content: "";
+            height:
+                170px;
 
-    position: absolute;
+            overflow:
+                hidden;
 
-    width: 650px;
+            background:
+                #f0ebdf;
+        }
 
-    height: 230px;
 
-    right: -150px;
+        .soft-light-one {
 
-    top: -80px;
+            position:
+                absolute;
 
-    background:
-        rgba(214,176,65,.12);
+            width:
+                600px;
 
-    border-radius: 50%;
+            height:
+                240px;
 
-    filter: blur(70px);
+            right:
+                -160px;
 
-    animation:
-        waveMove 9s ease-in-out
-        infinite alternate;
-}
+            top:
+                -80px;
 
+            background:
+                rgba(216,177,62,0.13);
 
-.wave-area::after {
+            border-radius:
+                50%;
 
-    content: "";
+            filter:
+                blur(75px);
 
-    position: absolute;
+            animation:
+                floatingOne
+                9s ease-in-out
+                infinite alternate;
+        }
 
-    width: 600px;
 
-    height: 220px;
+        .soft-light-two {
 
-    left: -150px;
+            position:
+                absolute;
 
-    bottom: -100px;
+            width:
+                550px;
 
-    background:
-        rgba(186,151,69,.08);
+            height:
+                220px;
 
-    border-radius: 50%;
+            left:
+                -160px;
 
-    filter: blur(75px);
+            bottom:
+                -100px;
 
-    animation:
-        waveMove2 11s ease-in-out
-        infinite alternate;
-}
+            background:
+                rgba(190,157,72,0.08);
 
+            border-radius:
+                50%;
 
-@keyframes waveMove {
+            filter:
+                blur(80px);
 
-    from {
-        transform:
-            translateX(0)
-            translateY(0)
-            scale(1);
-    }
+            animation:
+                floatingTwo
+                11s ease-in-out
+                infinite alternate;
+        }
 
-    to {
-        transform:
-            translateX(-80px)
-            translateY(20px)
-            scale(1.12);
-    }
-}
 
+        @keyframes floatingOne {
 
-@keyframes waveMove2 {
+            from {
+                transform:
+                    translateX(0)
+                    translateY(0)
+                    scale(1);
+            }
 
-    from {
-        transform:
-            translateX(0)
-            translateY(0)
-            scale(1);
-    }
+            to {
+                transform:
+                    translateX(-80px)
+                    translateY(20px)
+                    scale(1.12);
+            }
+        }
 
-    to {
-        transform:
-            translateX(70px)
-            translateY(-20px)
-            scale(1.1);
-    }
-}
 
+        @keyframes floatingTwo {
 
-.wave-shape {
+            from {
+                transform:
+                    translateX(0)
+                    translateY(0)
+                    scale(1);
+            }
 
-    position: absolute;
+            to {
+                transform:
+                    translateX(70px)
+                    translateY(-20px)
+                    scale(1.10);
+            }
+        }
 
-    width: 110%;
 
-    left: -5%;
+        .wave {
 
-    height: 120px;
+            position:
+                absolute;
 
-    bottom: -90px;
+            width:
+                110%;
 
-    background: #11100d;
+            height:
+                120px;
 
-    border-radius:
-        50% 50% 0 0 /
-        35% 35% 0 0;
-}
+            left:
+                -5%;
 
+            bottom:
+                -90px;
 
-/* =========================
-   INCOME
-========================= */
+            background:
+                #11100d;
 
-.income-section {
+            border-radius:
+                50% 50% 0 0 /
+                38% 38% 0 0;
+        }
 
-    background: #11100d;
 
-    color: white;
-}
+        /* =========================
+           INCOME
+        ========================= */
 
+        .income {
 
-.income-section
-.section-title h2 {
+            background:
+                #11100d;
 
-    color: white;
-}
+            color:
+                white;
+        }
 
 
-.income-box {
+        .income .section-heading h2 {
 
-    max-width: 850px;
+            color:
+                #ffffff;
+        }
 
-    margin: auto;
 
-    background: #1b1914;
+        .income-box {
 
-    border:
-        1px solid #4b3d20;
+            width:
+                min(850px, 100%);
 
-    border-radius: 20px;
+            margin:
+                auto;
 
-    padding: 38px;
-}
+            padding:
+                38px;
 
+            background:
+                #1b1914;
 
-.income-box p {
+            border:
+                1px solid #4d3e20;
 
-    color: #ddd4c2;
+            border-radius:
+                20px;
 
-    font-size: 17px;
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.15);
+        }
 
-    line-height: 2.3;
 
-    text-align: justify;
+        .income-box p {
 
-    margin-bottom: 25px;
-}
+            color:
+                #ddd4c2;
 
+            font-size:
+                17px;
 
-.income-list {
+            line-height:
+                2.35;
 
-    list-style: none;
-}
+            text-align:
+                justify;
 
+            margin-bottom:
+                25px;
+        }
 
-.income-list li {
 
-    padding: 15px 18px;
+        .income-list {
 
-    margin-bottom: 12px;
+            list-style:
+                none;
+        }
 
-    background:
-        rgba(255,255,255,.04);
 
-    border:
-        1px solid
-        rgba(226,190,77,.15);
+        .income-list li {
 
-    border-radius: 12px;
+            position:
+                relative;
 
-    color: #eee5d4;
+            padding:
+                15px 18px;
 
-    font-size: 16px;
+            margin-bottom:
+                12px;
 
-    line-height: 2.1;
+            background:
+                rgba(255,255,255,0.04);
 
-    text-align: justify;
-}
+            border:
+                1px solid
+                rgba(226,190,77,0.15);
 
+            border-radius:
+                12px;
 
-.income-list li::before {
+            color:
+                #eee5d4;
 
-    content: "";
+            font-size:
+                16px;
 
-    display: inline-block;
+            line-height:
+                2.1;
 
-    width: 7px;
+            text-align:
+                justify;
+        }
 
-    height: 7px;
 
-    background: #e2bb4a;
+        .income-list li::before {
 
-    border-radius: 50%;
+            content:
+                "";
 
-    margin-left: 12px;
-}
+            display:
+                inline-block;
 
+            width:
+                7px;
 
-/* =========================
-   COOPERATION
-========================= */
+            height:
+                7px;
 
-.cooperation-section {
+            background:
+                #e2bb4a;
 
-    background:
-        linear-gradient(
-            135deg,
-            #f7f1df,
-            #eee3c8
-        );
-}
+            border-radius:
+                50%;
 
+            margin-left:
+                12px;
+        }
 
-.cooperation-box {
 
-    max-width: 850px;
+        /* =========================
+           COOPERATION
+        ========================= */
 
-    margin: auto;
+        .cooperation {
 
-    padding: 45px 35px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8f2e2,
+                    #eee3c7
+                );
+        }
 
-    background: white;
 
-    border:
-        1px solid #dfd0ad;
+        .cooperation-box {
 
-    border-radius: 22px;
+            max-width:
+                850px;
 
-    text-align: center;
+            margin:
+                auto;
 
-    box-shadow:
-        0 15px 40px
-        rgba(70,55,20,.08);
-}
+            background:
+                #ffffff;
 
+            padding:
+                45px 35px;
 
-.cooperation-box p {
+            border:
+                1px solid #ded0ad;
 
-    color: #554e42;
+            border-radius:
+                22px;
 
-    font-size: 16px;
+            text-align:
+                center;
 
-    line-height: 2.4;
+            box-shadow:
+                0 15px 40px
+                rgba(70,55,20,0.08);
+        }
 
-    text-align: justify;
-}
 
+        .cooperation-box p {
 
-.enter-button {
+            color:
+                #554e42;
 
-    display: inline-block;
+            font-size:
+                16px;
 
-    margin-top: 28px;
+            line-height:
+                2.4;
 
-    padding: 14px 50px;
+            text-align:
+                justify;
+        }
 
-    border-radius: 12px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #e8c45b,
-            #b98721
-        );
+        .enter-button {
 
-    color: #17130a;
+            display:
+                inline-block;
 
-    text-decoration: none;
+            margin-top:
+                28px;
 
-    font-weight: bold;
+            padding:
+                14px 52px;
 
-    font-size: 16px;
+            border-radius:
+                12px;
 
-    box-shadow:
-        0 8px 20px
-        rgba(170,125,25,.20);
+            background:
+                linear-gradient(
+                    135deg,
+                    #e9c65c,
+                    #b98721
+                );
 
-    transition:
-        all .3s ease;
-}
+            color:
+                #17130a;
 
+            text-decoration:
+                none;
 
-.enter-button:hover {
+            font-weight:
+                bold;
 
-    transform:
-        translateY(-3px);
+            font-size:
+                16px;
 
-    box-shadow:
-        0 13px 28px
-        rgba(170,125,25,.30);
-}
+            box-shadow:
+                0 8px 22px
+                rgba(170,125,25,0.22);
 
+            transition:
+                all .3s ease;
+        }
 
-/* =========================
-   SECURITY
-========================= */
 
-.security-section {
+        .enter-button:hover {
 
-    background: #15130e;
+            transform:
+                translateY(-3px);
 
-    color: white;
-}
+            box-shadow:
+                0 13px 30px
+                rgba(170,125,25,0.30);
+        }
 
 
-.security-section
-.section-title h2 {
+        /* =========================
+           SECURITY
+        ========================= */
 
-    color: white;
-}
+        .security {
 
+            background:
+                #15130e;
 
-.security-box {
+            color:
+                white;
+        }
 
-    max-width: 950px;
 
-    margin: auto;
+        .security .section-heading h2 {
 
-    background: #201d16;
+            color:
+                white;
+        }
 
-    border:
-        1px solid #4b3d20;
 
-    border-radius: 22px;
+        .security-box {
 
-    padding: 40px;
-}
+            max-width:
+                950px;
 
+            margin:
+                auto;
 
-.security-box p {
+            background:
+                #201d16;
 
-    color: #d7cebd;
+            border:
+                1px solid #4b3d20;
 
-    font-size: 16px;
+            border-radius:
+                22px;
 
-    line-height: 2.4;
+            padding:
+                40px;
+        }
 
-    text-align: justify;
 
-    margin-bottom: 20px;
-}
+        .security-box p {
 
+            color:
+                #d7cebd;
 
-/* =========================
-   BENEFITS
-========================= */
+            font-size:
+                16px;
 
-.benefits-section {
+            line-height:
+                2.4;
 
-    background: #f1ecdf;
-}
+            text-align:
+                justify;
 
+            margin-bottom:
+                20px;
+        }
 
-.benefits {
 
-    display: grid;
+        .security-box p:last-child {
 
-    grid-template-columns:
-        repeat(2, 1fr);
+            margin-bottom:
+                0;
+        }
 
-    gap: 15px;
-}
 
+        /* =========================
+           BENEFITS
+        ========================= */
 
-.benefit {
+        .benefits {
 
-    background: white;
+            background:
+                #f1ecdf;
+        }
 
-    border:
-        1px solid #e2d7bf;
 
-    border-radius: 15px;
+        .benefit-grid {
 
-    padding: 20px;
+            display:
+                grid;
 
-    color: #4f493e;
+            grid-template-columns:
+                repeat(2, 1fr);
 
-    font-size: 16px;
+            gap:
+                15px;
+        }
 
-    line-height: 2.2;
 
-    text-align: justify;
+        .benefit-card {
 
-    box-shadow:
-        0 7px 20px
-        rgba(60,50,25,.035);
-}
+            background:
+                #ffffff;
 
+            border:
+                1px solid #e2d7bf;
 
-.benefit::before {
+            border-radius:
+                15px;
 
-    content: "";
+            padding:
+                20px;
 
-    display: inline-block;
+            color:
+                #4f493e;
 
-    width: 7px;
+            font-size:
+                16px;
 
-    height: 7px;
+            line-height:
+                2.2;
 
-    background: #b27f19;
+            text-align:
+                justify;
 
-    border-radius: 50%;
+            box-shadow:
+                0 7px 20px
+                rgba(60,50,25,0.04);
+        }
 
-    margin-left: 12px;
-}
 
+        .benefit-card::before {
 
-/* =========================
-   FOOTER
-========================= */
+            content:
+                "";
 
-footer {
+            display:
+                inline-block;
 
-    background: #080807;
+            width:
+                7px;
 
-    color: #aaa291;
+            height:
+                7px;
 
-    text-align: center;
+            background:
+                #b27f19;
 
-    padding: 30px 15px;
-}
+            border-radius:
+                50%;
 
+            margin-left:
+                12px;
+        }
 
-footer strong {
 
-    color: #e3bd50;
+        /* =========================
+           FOOTER
+        ========================= */
 
-    font-size: 20px;
-}
+        footer {
 
+            background:
+                #080807;
 
-/* =========================
-   MOBILE
-========================= */
+            color:
+                #aaa291;
 
-@media (max-width: 800px) {
+            text-align:
+                center;
 
-    .main-header {
+            padding:
+                30px 15px;
+        }
 
-        padding:
-            45px 15px 38px;
-    }
 
+        footer strong {
 
-    .main-title {
+            display:
+                block;
 
-        font-size: 28px;
-    }
+            color:
+                #e3bd50;
 
+            font-size:
+                20px;
 
-    .nav-wrapper {
+            margin-bottom:
+                4px;
+        }
 
-        padding:
-            9px 10px;
-    }
 
+        /* =========================
+           MOBILE
+        ========================= */
 
-    .quick-nav {
+        @media (max-width: 800px) {
 
-        gap: 5px;
-    }
+            body {
+                font-size: 15px;
+            }
 
 
-    .quick-nav a {
+            .top-header {
 
-        padding:
-            8px 10px;
+                padding:
+                    45px 15px 50px;
+            }
 
-        font-size: 13px;
-    }
 
+            .title {
 
-    section {
+                font-size:
+                    28px;
+            }
 
-        padding:
-            60px 0;
 
-        scroll-margin-top:
-            185px;
-    }
+            .sticky-menu {
 
+                padding:
+                    8px 10px;
+            }
 
-    .hero {
 
-        padding:
-            60px 0 75px;
-    }
+            .menu {
 
+                gap:
+                    5px;
+            }
 
-    .hero-box p {
 
-        font-size: 15px;
+            .menu-item {
 
-        line-height: 2.25;
-    }
+                min-height:
+                    40px;
 
+                padding:
+                    7px 10px;
 
-    .steps {
+                font-size:
+                    13px;
+            }
 
-        grid-template-columns:
-            1fr;
-    }
 
+            section {
 
-    .income-box,
-    .cooperation-box,
-    .security-box {
+                padding:
+                    60px 0;
 
-        padding:
-            25px 20px;
-    }
+                scroll-margin-top:
+                    175px;
+            }
 
 
-    .income-box p,
-    .income-list li,
-    .cooperation-box p,
-    .security-box p,
-    .benefit {
+            .introduction {
 
-        font-size: 15px;
+                padding:
+                    60px 0 75px;
+            }
 
-        line-height: 2.2;
-    }
 
+            .intro-content p {
 
-    .benefits {
+                font-size:
+                    15px;
 
-        grid-template-columns:
-            1fr;
-    }
+                line-height:
+                    2.3;
+            }
 
 
-    .wave-area {
+            .steps {
 
-        height: 130px;
-    }
+                grid-template-columns:
+                    1fr;
+            }
 
-}
 
-</style>
+            .step-card p {
+
+                font-size:
+                    15px;
+
+                line-height:
+                    2.25;
+            }
+
+
+            .income-box,
+            .cooperation-box,
+            .security-box {
+
+                padding:
+                    25px 20px;
+            }
+
+
+            .income-box p,
+            .income-list li,
+            .cooperation-box p,
+            .security-box p,
+            .benefit-card {
+
+                font-size:
+                    15px;
+
+                line-height:
+                    2.25;
+            }
+
+
+            .benefit-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .wave-section {
+
+                height:
+                    135px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -1024,19 +1234,19 @@ footer strong {
 <body>
 
 
-<!-- =========================
-     MAIN HEADER
-========================= -->
+<!-- ==================================================
+     HEADER
+================================================== -->
 
-<header class="main-header">
+<header class="top-header">
 
-    <h1 class="main-title">
+    <h1 class="title">
 
-        <span class="white">
+        <span class="title-white">
             زرین وام |
         </span>
 
-        <span class="gold">
+        <span class="title-gold">
             درآمد از کارشناسی طلا
         </span>
 
@@ -1045,44 +1255,59 @@ footer strong {
 </header>
 
 
-<!-- =========================
-     STICKY NAVIGATION
-========================= -->
+<!-- ==================================================
+     STICKY THREE-STEP MENU
+================================================== -->
 
-<div class="nav-wrapper">
+<nav class="sticky-menu">
 
-    <nav class="quick-nav">
+    <div class="menu">
 
-        <a href="#process" class="nav-link active">
+        <a
+            href="#process"
+            class="menu-item active"
+            data-target="process"
+        >
             نحوه کار زرین وام
         </a>
 
-        <a href="#income" class="nav-link">
+
+        <a
+            href="#income"
+            class="menu-item"
+            data-target="income"
+        >
             درآمد و کمیسیون شعب
         </a>
 
-        <a href="#cooperation" class="nav-link">
+
+        <a
+            href="#cooperation"
+            class="menu-item"
+            data-target="cooperation"
+        >
             ورود به فرم همکاری
         </a>
 
-    </nav>
+    </div>
 
-</div>
+</nav>
 
 
-<!-- =========================
+<!-- ==================================================
      INTRODUCTION
-========================= -->
+================================================== -->
 
-<section class="hero">
+<section class="introduction">
 
     <div class="container">
 
-        <div class="hero-box">
+        <div class="intro-content">
 
             <h2>
                 معرفی زرین وام و جذب کارشناس طلا
             </h2>
+
 
             <p>
 
@@ -1100,18 +1325,19 @@ footer strong {
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      PROCESS
-========================= -->
+================================================== -->
 
 <section
-    class="process-section"
+    class="process"
     id="process"
 >
 
     <div class="container">
 
-        <div class="section-title">
+
+        <div class="section-heading">
 
             <h2>
                 فرایند کلی زرین وام ؟
@@ -1125,7 +1351,7 @@ footer strong {
         <div class="steps">
 
 
-            <div class="step">
+            <article class="step-card">
 
                 <div class="step-number">
                     ۱
@@ -1138,10 +1364,10 @@ footer strong {
 
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="step">
+            <article class="step-card">
 
                 <div class="step-number">
                     ۲
@@ -1154,10 +1380,10 @@ footer strong {
 
                 </p>
 
-            </div>
+            </article>
 
 
-            <div class="step">
+            <article class="step-card">
 
                 <div class="step-number">
                     ۳
@@ -1171,7 +1397,7 @@ footer strong {
 
                 </p>
 
-            </div>
+            </article>
 
 
         </div>
@@ -1181,29 +1407,34 @@ footer strong {
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      WAVE
-========================= -->
+================================================== -->
 
-<div class="wave-area">
+<div class="wave-section">
 
-    <div class="wave-shape"></div>
+    <div class="soft-light-one"></div>
+
+    <div class="soft-light-two"></div>
+
+    <div class="wave"></div>
 
 </div>
 
 
-<!-- =========================
+<!-- ==================================================
      INCOME
-========================= -->
+================================================== -->
 
 <section
-    class="income-section"
+    class="income"
     id="income"
 >
 
     <div class="container">
 
-        <div class="section-title">
+
+        <div class="section-heading">
 
             <h2>
                 حق الزحمه و درآمد دریافتی شعب
@@ -1215,6 +1446,7 @@ footer strong {
 
 
         <div class="income-box">
+
 
             <p>
 
@@ -1229,11 +1461,13 @@ footer strong {
                     کارشناسی طلا و ثبت مشخصات طلای تایید شده
                 </li>
 
+
                 <li>
                     ثبت اطلاعات هویتی و شناسایی کاربر در سیستم
                 </li>
 
             </ul>
+
 
         </div>
 
@@ -1242,18 +1476,19 @@ footer strong {
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      COOPERATION
-========================= -->
+================================================== -->
 
 <section
-    class="cooperation-section"
+    class="cooperation"
     id="cooperation"
 >
 
     <div class="container">
 
-        <div class="section-title">
+
+        <div class="section-heading">
 
             <h2>
                 ورود به فرم همکاری
@@ -1266,6 +1501,7 @@ footer strong {
 
         <div class="cooperation-box">
 
+
             <p>
 
                 با شرکت در این فرم همکاری ، تعهد و مسئولیت قانونی ای برای طرفین ایجاد نمی‌شود .
@@ -1273,6 +1509,11 @@ footer strong {
 
             </p>
 
+
+            <!--
+                بعداً لینک پرس‌لاین را
+                جای href="#" قرار می‌دهیم.
+            -->
 
             <a
                 href="#"
@@ -1287,6 +1528,7 @@ footer strong {
 
             </a>
 
+
         </div>
 
     </div>
@@ -1294,15 +1536,16 @@ footer strong {
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      SECURITY
-========================= -->
+================================================== -->
 
-<section class="security-section">
+<section class="security">
 
     <div class="container">
 
-        <div class="section-title">
+
+        <div class="section-heading">
 
             <h2>
                 ۲ لایه امنیتی و حقوقی
@@ -1314,6 +1557,7 @@ footer strong {
 
 
         <div class="security-box">
+
 
             <p>
 
@@ -1343,6 +1587,7 @@ footer strong {
 
             </p>
 
+
         </div>
 
     </div>
@@ -1350,15 +1595,16 @@ footer strong {
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      BENEFITS
-========================= -->
+================================================== -->
 
-<section class="benefits-section">
+<section class="benefits">
 
     <div class="container">
 
-        <div class="section-title">
+
+        <div class="section-heading">
 
             <h2>
                 مزایای همکاری با زرین وام
@@ -1369,35 +1615,57 @@ footer strong {
         </div>
 
 
-        <div class="benefits">
+        <div class="benefit-grid">
 
-            <div class="benefit">
+
+            <div class="benefit-card">
+
                 ایجاد جریان درآمدی مطمئن بدون نیاز به درگیری سرمایه
+
             </div>
 
-            <div class="benefit">
+
+            <div class="benefit-card">
+
                 روشی هوشمندانه برای بهبود و پوشش مقدار زیادی از هزینه های جاری و ثابت فروشگاه شما
+
             </div>
 
-            <div class="benefit">
+
+            <div class="benefit-card">
+
                 برندینگ و افزایش اعتبار بدلیل قرار گیری فروشگاه بعنوان امین و معتمد پلتفرم
+
             </div>
 
-            <div class="benefit">
+
+            <div class="benefit-card">
+
                 کسب درآمد از دانش و تخصص خود
+
             </div>
 
-            <div class="benefit">
+
+            <div class="benefit-card">
+
                 استفاده بهینه از زمان و اوقات آزاد
+
             </div>
 
-            <div class="benefit">
+
+            <div class="benefit-card">
+
                 ریسک صفر سرمایه در مقابل نوسانات بازار
+
             </div>
 
-            <div class="benefit">
+
+            <div class="benefit-card">
+
                 افزایش نرخ ورود یا به اصطلاح پا خور شدن فروشگاه شما
+
             </div>
+
 
         </div>
 
@@ -1406,9 +1674,9 @@ footer strong {
 </section>
 
 
-<!-- =========================
+<!-- ==================================================
      FOOTER
-========================= -->
+================================================== -->
 
 <footer>
 
@@ -1416,77 +1684,118 @@ footer strong {
         زرین وام
     </strong>
 
-    <p>
+    <span>
         درآمد از کارشناسی طلا
-    </p>
+    </span>
 
 </footer>
 
 
-<!-- =========================
-     ACTIVE NAV SCRIPT
-========================= -->
+<!-- ==================================================
+     JAVASCRIPT
+     فعال کردن گزینه مربوط به بخش در حال مشاهده
+================================================== -->
 
 <script>
 
-const navLinks =
-    document.querySelectorAll(".nav-link");
+    const menuItems =
+        document.querySelectorAll(".menu-item");
 
-const sections = [
-    document.querySelector("#process"),
-    document.querySelector("#income"),
-    document.querySelector("#cooperation")
-];
+    const targetSections =
+        document.querySelectorAll(
+            "#process, #income, #cooperation"
+        );
 
 
-window.addEventListener(
-    "scroll",
-    function () {
+    /* =========================
+       CLICK
+    ========================= */
 
-        let current = "";
+    menuItems.forEach(function(item) {
 
-        sections.forEach(
-            function (section) {
+        item.addEventListener(
+            "click",
+            function() {
 
-                if (!section) return;
+                menuItems.forEach(function(link) {
 
-                const sectionTop =
-                    section.offsetTop - 230;
+                    link.classList.remove("active");
 
-                if (
-                    window.scrollY >= sectionTop
-                ) {
-                    current =
-                        section.getAttribute("id");
-                }
+                });
+
+                item.classList.add("active");
 
             }
         );
 
+    });
 
-        navLinks.forEach(
-            function (link) {
 
-                link.classList.remove("active");
+    /* =========================
+       SCROLL
+    ========================= */
 
-                if (
-                    link.getAttribute("href") ===
-                    "#" + current
-                ) {
+    const observer =
+        new IntersectionObserver(
 
-                    link.classList.add("active");
+            function(entries) {
 
-                }
+                entries.forEach(function(entry) {
 
+                    if (entry.isIntersecting) {
+
+                        menuItems.forEach(function(item) {
+
+                            item.classList.remove(
+                                "active"
+                            );
+
+                        });
+
+
+                        const activeItem =
+                            document.querySelector(
+                                '[data-target="' +
+                                entry.target.id +
+                                '"]'
+                            );
+
+
+                        if (activeItem) {
+
+                            activeItem.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+
+                });
+
+            },
+
+            {
+                root: null,
+
+                threshold: 0.25,
+
+                rootMargin:
+                    "-120px 0px -45% 0px"
             }
+
         );
 
-    }
-);
+
+    targetSections.forEach(function(section) {
+
+        observer.observe(section);
+
+    });
 
 </script>
 
 
 </body>
 
-    </html>
+</html>
