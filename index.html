@@ -9,6 +9,8 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -16,103 +18,140 @@
     }
 
     body {
-      margin: 0;
       font-family: Tahoma, "Segoe UI", Arial, sans-serif;
       background: #f4efe3;
       color: #222;
       line-height: 2;
     }
 
+    /* =========================
+       HEADER
+    ========================== */
+
     header {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(212,175,55,0.22), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(212,175,55,0.08), transparent 30%),
+        #090909;
+
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(212,175,55,0.16),
-          transparent 35%
-        ),
-        radial-gradient(
-          circle at 80% 70%,
-          rgba(245,215,110,0.12),
-          transparent 40%
-        ),
-        #080808;
-      color: white;
-      text-align: center;
-      padding: 55px 20px 65px;
-      border-bottom: 1px solid rgba(212,175,55,0.35);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,55,0.12);
+      animation: headerPulse 5s ease-in-out infinite;
     }
 
     header h1 {
-      margin: 0;
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 700;
+      position: relative;
+      z-index: 2;
+      font-size: clamp(2rem, 5vw, 4rem);
       line-height: 1.5;
-    }
-
-    header h1 .gold {
-      color: #d4af37;
+      font-weight: 800;
     }
 
     header h1 .white {
       color: #fff;
     }
 
+    header h1 .gold {
+      color: #d4af37;
+    }
+
+    /* =========================
+       HEADER ANIMATIONS
+    ========================== */
+
+    @keyframes headerPulse {
+      0%, 100% {
+        transform: scale(0.95);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
     section {
-      width: min(900px, 92%);
-      margin: 0 auto;
-      padding: 70px 0;
+      width: min(92%, 900px);
+      margin: 0 auto 80px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(212,175,55,0.28);
+      border-radius: 24px;
+      padding: 45px 35px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+      scroll-margin-top: 110px;
     }
 
     section h2 {
       text-align: center;
-      margin: 0 0 30px;
-      color: #a67c00;
-      font-size: clamp(23px, 4vw, 32px);
-      line-height: 1.6;
+      color: #9a7411;
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      margin-bottom: 30px;
+      line-height: 1.7;
     }
 
     section p {
-      font-size: 17px;
+      margin-bottom: 22px;
       text-align: justify;
-      text-justify: inter-word;
-      margin: 0 0 22px;
+      color: #333;
     }
 
-    /* فقط برای جاستیفای متن معرفی */
+    /* =========================
+       INTRODUCTION
+    ========================== */
+
+    #introduction {
+      margin-top: 30px;
+      margin-bottom: 35px;
+    }
+
     #introduction p {
       text-align: justify;
     }
 
-    #introduction {
-      padding-top: 65px;
-      padding-bottom: 35px;
-    }
-
-    #introduction h2 {
-      margin-bottom: 28px;
-    }
+    /* =========================
+       GUIDE BEFORE MENU
+    ========================== */
 
     .guide-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 5px;
-      margin-bottom: 22px;
+      width: min(92%, 520px);
+      margin: 0 auto 18px;
+      text-align: center;
     }
 
     .guide {
-      color: #8a6a00;
-      font-size: 15px;
-      text-align: center;
-      opacity: 0.9;
+      color: #7b641e;
+      font-size: 0.95rem;
+      font-weight: bold;
     }
 
-    .arrow {
-      display: inline-block;
-      margin-right: 7px;
-      font-size: 22px;
+    .guide .arrow {
+      display: block;
+      color: #d4af37;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-top: 3px;
       animation: arrowMove 1.5s ease-in-out infinite;
     }
 
@@ -126,6 +165,10 @@
       }
     }
 
+    /* =========================
+       STICKY MENU
+    ========================== */
+
     .menu-wrapper {
       position: sticky;
       top: 15px;
@@ -138,68 +181,61 @@
     }
 
     .menu {
-      width: min(850px, 92%);
+      pointer-events: auto;
+      width: min(92%, 520px);
       display: flex;
       flex-direction: column;
       gap: 12px;
-      pointer-events: auto;
     }
+
+    /* =========================
+       MENU BUTTONS
+    ========================== */
 
     .menu a {
       position: relative;
       overflow: hidden;
+
       display: block;
-      text-decoration: none;
-      color: #f5f5f5;
-      background: #111;
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 14px;
-      padding: 15px 20px;
       text-align: center;
-      font-size: 16px;
-      font-weight: 600;
+      text-decoration: none;
+
+      color: #fff;
+      background: #111;
+
+      border: 1px solid rgba(212,175,55,0.5);
+      border-radius: 16px;
+
+      padding: 13px 18px;
+
+      font-weight: bold;
+
       box-shadow:
-        0 6px 18px rgba(0,0,0,0.12);
+        0 8px 25px rgba(0,0,0,0.12);
+
       transition:
-        color 0.35s ease,
-        background 0.35s ease,
-        border-color 0.35s ease,
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
-    .menu a span {
-      position: relative;
-      z-index: 2;
-    }
-
-    .menu a:hover {
-      transform: translateY(-2px);
-      border-color: rgba(212,175,55,0.7);
-      box-shadow:
-        0 8px 24px rgba(0,0,0,0.18);
-    }
-
-    .menu a.active {
-      color: #111;
-      background: linear-gradient(
-        135deg,
-        #fff1a8,
-        #d4af37,
-        #f5d76e
-      );
-      border-color: #d4af37;
-      box-shadow:
-        0 8px 25px rgba(166,124,0,0.25);
-    }
+    /*
+       موج نرم پس‌زمینه
+       این موج به شکل یک نوار نور
+       داخل دکمه حرکت می‌کند.
+    */
 
     .menu a::before {
       content: "";
+
       position: absolute;
+
       top: -120%;
       right: -35%;
+
       width: 170%;
       height: 320%;
+
       background:
         linear-gradient(
           115deg,
@@ -209,18 +245,25 @@
           rgba(245,215,110,0.06) 58%,
           transparent 65%
         );
+
       transform: rotate(-8deg);
+
       animation: menuWave 7s ease-in-out infinite;
+
       pointer-events: none;
     }
 
     .menu a::after {
       content: "";
+
       position: absolute;
+
       width: 80%;
       height: 2px;
+
       right: -90%;
       bottom: 0;
+
       background:
         linear-gradient(
           90deg,
@@ -228,29 +271,41 @@
           rgba(212,175,55,0.55),
           transparent
         );
+
       filter: blur(1px);
+
       animation: menuLight 5s ease-in-out infinite;
+
       pointer-events: none;
     }
 
     @keyframes menuWave {
+
       0% {
-        transform: translateX(0) rotate(-8deg);
+        transform:
+          translateX(0)
+          rotate(-8deg);
         opacity: 0.25;
       }
 
       50% {
-        transform: translateX(-20%) rotate(-4deg);
+        transform:
+          translateX(-20%)
+          rotate(-4deg);
         opacity: 0.8;
       }
 
       100% {
-        transform: translateX(0) rotate(-8deg);
+        transform:
+          translateX(0)
+          rotate(-8deg);
         opacity: 0.25;
       }
+
     }
 
     @keyframes menuLight {
+
       0% {
         right: -90%;
         opacity: 0;
@@ -273,11 +328,37 @@
         right: 110%;
         opacity: 0;
       }
+
     }
 
-    #process {
-      padding-top: 30px;
+    .menu a:hover {
+      transform: translateY(-3px);
+
+      border-color: #d4af37;
+
+      box-shadow:
+        0 10px 30px rgba(212,175,55,0.18);
     }
+
+    .menu a.active {
+      background:
+        linear-gradient(
+          135deg,
+          #d4af37,
+          #a67c00
+        );
+
+      color: #111;
+
+      border-color: #f5d76e;
+
+      box-shadow:
+        0 8px 30px rgba(212,175,55,0.3);
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
 
     .process-list {
       display: flex;
@@ -286,162 +367,232 @@
     }
 
     .process-item {
-      background: rgba(255,255,255,0.6);
-      border: 1px solid rgba(166,124,0,0.18);
-      border-radius: 16px;
+      position: relative;
+
       padding: 22px 25px;
+
+      background: #faf7ef;
+
+      border-right: 5px solid #d4af37;
+
+      border-radius: 15px;
+
       box-shadow:
-        0 8px 24px rgba(0,0,0,0.06);
+        0 5px 18px rgba(0,0,0,0.05);
+    }
+
+    .process-item::before {
+      content: "";
+
+      position: absolute;
+
+      right: -15px;
+      top: 25px;
+
+      width: 25px;
+      height: 25px;
+
+      background: #d4af37;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 5px #f4efe3;
     }
 
     .process-item p {
       margin: 0;
     }
 
-    .wave-section {
-      position: relative;
-      height: 100px;
-      overflow: hidden;
-      margin-top: -15px;
-      margin-bottom: -15px;
-    }
+    /* =========================
+       WAVE SECTION
+    ========================== */
 
-    .wave-section::before,
-    .wave-section::after {
-      content: "";
-      position: absolute;
-      left: -10%;
-      width: 120%;
+    .wave-section {
+      width: 100%;
       height: 100px;
-      border-radius: 50%;
+
+      margin: -20px 0 60px;
+
+      overflow: hidden;
+      position: relative;
     }
 
     .wave-section::before {
-      top: 35px;
-      background: rgba(212,175,55,0.10);
-      animation: waveMove 7s ease-in-out infinite;
+      content: "";
+
+      position: absolute;
+
+      width: 120%;
+      height: 130px;
+
+      left: -10%;
+      top: 0;
+
+      background: rgba(212,175,55,0.08);
+
+      border-radius: 50%;
+
+      animation:
+        largeWave 8s ease-in-out infinite;
     }
 
-    .wave-section::after {
-      top: 50px;
-      background: rgba(166,124,0,0.07);
-      animation: waveMove 9s ease-in-out infinite reverse;
-    }
+    @keyframes largeWave {
 
-    @keyframes waveMove {
       0%, 100% {
-        transform: translateX(-2%) scaleY(1);
+        transform:
+          translateX(-2%)
+          rotate(0deg);
       }
 
       50% {
-        transform: translateX(2%) scaleY(1.15);
+        transform:
+          translateX(2%)
+          rotate(2deg);
       }
+
     }
 
-    #income {
-      background: rgba(255,255,255,0.28);
-      width: 100%;
-      max-width: none;
-      padding-left: max(4%, calc((100% - 900px) / 2));
-      padding-right: max(4%, calc((100% - 900px) / 2));
-    }
+    /* =========================
+       INCOME
+    ========================== */
 
     .income-box {
-      max-width: 900px;
-      margin: 0 auto;
+      background: #111;
+
+      color: white;
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      border: 1px solid rgba(212,175,55,0.5);
+    }
+
+    .income-box p {
+      color: #eee;
+      text-align: center;
     }
 
     .income-list {
+      list-style: none;
+
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-top: 28px;
+
+      gap: 15px;
+
+      margin-top: 20px;
     }
 
-    .income-item {
-      background: #111;
+    .income-list li {
+      background:
+        rgba(212,175,55,0.08);
+
+      border:
+        1px solid rgba(212,175,55,0.35);
+
+      padding: 15px 20px;
+
+      border-radius: 12px;
+
       color: #fff;
-      border-radius: 14px;
-      padding: 18px 22px;
-      border-right: 4px solid #d4af37;
-      box-shadow:
-        0 7px 20px rgba(0,0,0,0.12);
+
+      position: relative;
+
+      padding-right: 45px;
     }
 
-    .income-item p {
-      margin: 0;
-      text-align: right;
-      font-size: 16px;
+    .income-list li::before {
+      content: "✓";
+
+      position: absolute;
+
+      right: 15px;
+
+      color: #d4af37;
+
+      font-size: 1.2rem;
+
+      font-weight: bold;
     }
+
+    /* =========================
+       COOPERATION
+    ========================== */
 
     .cooperation-box {
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(212,175,55,0.12),
-          transparent 40%
-        ),
-        #111;
-      color: #fff;
-      border-radius: 20px;
-      padding: 35px 30px;
       text-align: center;
-      box-shadow:
-        0 12px 35px rgba(0,0,0,0.15);
-      border: 1px solid rgba(212,175,55,0.35);
-    }
-
-    .cooperation-box h2 {
-      color: #f5d76e;
     }
 
     .cooperation-box p {
       text-align: center;
-      color: #f3f3f3;
     }
 
-    .enter-button {
+    .enter-btn {
       display: inline-block;
+
       margin-top: 15px;
-      padding: 12px 40px;
-      border-radius: 12px;
-      background: linear-gradient(
-        135deg,
-        #fff1a8,
-        #d4af37,
-        #f5d76e
-      );
+
+      padding: 14px 55px;
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d4af37,
+          #a67c00
+        );
+
       color: #111;
+
       text-decoration: none;
-      font-weight: 700;
-      transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+
+      font-weight: bold;
+
+      font-size: 1.05rem;
+
+      box-shadow:
+        0 8px 25px rgba(212,175,55,0.25);
+
+      transition: 0.3s ease;
     }
 
-    .enter-button:hover {
+    .enter-btn:hover {
       transform: translateY(-3px);
+
       box-shadow:
-        0 8px 20px rgba(212,175,55,0.3);
+        0 12px 30px rgba(212,175,55,0.35);
     }
+
+    /* =========================
+       SECURITY ICON
+    ========================== */
 
     .security-icon {
       width: 92px;
       height: 92px;
+
       margin: 0 auto 15px;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: shieldFloat 3s ease-in-out infinite;
+
+      animation:
+        shieldFloat 3s ease-in-out infinite;
     }
 
     .security-icon svg {
       width: 100%;
       height: 100%;
+
       overflow: visible;
     }
 
     @keyframes shieldFloat {
+
       0%, 100% {
         transform: translateY(0);
       }
@@ -449,114 +600,184 @@
       50% {
         transform: translateY(-5px);
       }
+
     }
 
-    .security-box {
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(166,124,0,0.18);
-      border-radius: 20px;
-      padding: 35px 30px;
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.07);
-    }
+    /* =========================
+       BENEFITS
+    ========================== */
 
     .benefits-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 25px;
+      list-style: none;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 15px;
     }
 
-    .benefit {
-      position: relative;
-      background: rgba(255,255,255,0.65);
+    .benefits-list li {
+      background: #faf7ef;
+
+      border:
+        1px solid rgba(212,175,55,0.3);
+
       border-radius: 14px;
-      padding: 16px 22px 16px 22px;
-      border-right: 4px solid #d4af37;
-      box-shadow:
-        0 5px 16px rgba(0,0,0,0.05);
-      font-size: 16px;
+
+      padding: 18px 20px;
+
+      position: relative;
+
+      padding-right: 45px;
+
+      transition: 0.3s ease;
     }
 
-    .benefit::before {
-      content: "✓";
-      color: #a67c00;
-      font-weight: bold;
-      margin-left: 10px;
+    .benefits-list li::before {
+      content: "✦";
+
+      position: absolute;
+
+      right: 15px;
+
+      color: #d4af37;
+
+      font-size: 1.2rem;
     }
+
+    .benefits-list li:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      background: #080808;
+      background: #0b0b0b;
+
       color: #ccc;
+
       text-align: center;
-      padding: 30px 20px;
+
+      padding: 35px 20px;
+
       margin-top: 40px;
-      border-top: 1px solid rgba(212,175,55,0.25);
     }
 
-    footer p {
-      margin: 0;
-      font-size: 14px;
+    footer strong {
+      color: #d4af37;
     }
 
-    @media (max-width: 600px) {
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 700px) {
 
       header {
-        padding: 40px 15px 50px;
+        min-height: 85vh;
+        padding: 30px 15px;
       }
 
-      section {
-        width: 90%;
-        padding: 55px 0;
+      header h1 {
+        font-size: 2rem;
       }
 
-      section p {
-        font-size: 16px;
-        line-height: 2.1;
+      .guide-wrapper {
+        width: 92%;
+      }
+
+      .guide {
+        font-size: 0.88rem;
       }
 
       .menu-wrapper {
-        top: 8px;
+        top: 10px;
         margin-bottom: 45px;
       }
 
       .menu {
         width: 92%;
-        gap: 9px;
       }
 
       .menu a {
-        padding: 13px 14px;
-        font-size: 14px;
-        border-radius: 12px;
+        padding: 11px 12px;
+        font-size: 0.9rem;
       }
 
-      .cooperation-box,
-      .security-box {
-        padding: 28px 20px;
+      section {
+        width: 92%;
+
+        padding:
+          32px 20px;
+
+        border-radius: 20px;
+
+        margin-bottom: 55px;
       }
 
-      .income-item,
-      .benefit {
-        padding: 15px 17px;
+      section h2 {
+        font-size: 1.45rem;
       }
+
+      section p {
+        text-align: right;
+        font-size: 0.95rem;
+      }
+
+      .process-item {
+        padding: 18px 18px;
+      }
+
+      .income-box {
+        padding: 22px 17px;
+      }
+
+      .benefits-list {
+        grid-template-columns: 1fr;
+      }
+
+      .security-icon {
+        width: 78px;
+        height: 78px;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
+
     <h1>
       <span class="white">زرین وام |</span>
       <span class="gold">درآمد از کارشناسی طلا</span>
     </h1>
+
   </header>
 
 
+  <!-- =========================
+       INTRODUCTION
+  ========================== -->
+
   <section id="introduction">
 
-    <h2>معرفی زرین وام و جذب کارشناس طلا</h2>
+    <h2>
+      معرفی زرین وام و جذب کارشناس طلا
+    </h2>
 
     <p>
       زرین وام ، یک کسب و کار نوآور با ایده پرداخت وام اعتباری بر اساس سپرده طلا است .
@@ -568,28 +789,53 @@
   </section>
 
 
+  <!-- =========================
+       GUIDE
+       دقیقا قبل از سه گزینه
+  ========================== -->
+
   <div class="guide-wrapper">
+
     <div class="guide">
+
       برای مطالعه هر قسمت کلیک کنید
-      <span class="arrow">↓</span>
+
+      <span class="arrow">
+        ↓
+      </span>
+
     </div>
+
   </div>
 
+
+  <!-- =========================
+       STICKY MENU
+  ========================== -->
 
   <div class="menu-wrapper">
 
     <nav class="menu">
 
-      <a href="#process">
-        <span>نحوه کار زرین وام</span>
+      <a
+        href="#process"
+        data-target="process"
+      >
+        نحوه کار زرین وام
       </a>
 
-      <a href="#income">
-        <span>درآمد و کمیسیون شعب</span>
+      <a
+        href="#income"
+        data-target="income"
+      >
+        درآمد و کمیسیون شعب
       </a>
 
-      <a href="#cooperation">
-        <span>ورود به فرم همکاری</span>
+      <a
+        href="#cooperation"
+        data-target="cooperation"
+      >
+        ورود به فرم همکاری
       </a>
 
     </nav>
@@ -597,28 +843,42 @@
   </div>
 
 
+  <!-- =========================
+       PROCESS
+  ========================== -->
+
   <section id="process">
 
-    <h2>فرایند کلی زرین وام ؟</h2>
+    <h2>
+      فرایند کلی زرین وام ؟
+    </h2>
 
     <div class="process-list">
 
       <div class="process-item">
+
         <p>
-          متقاضی وام ، برای ثبت نام و کارشناسی طلای خود ، از طریق سایت زرین وام ، نوبت کارشناسی برای شعب منتخب شهر خود را دریافت می‌کند.
+          متقاضی وام ، برای ثبت نام و کارشناسی طلای خود ، از طریق سایت زرین وام ، نوبت کارشناسی برای شعب منتخب شهر خود را دریافت می‌کند .
         </p>
+
       </div>
 
-      <div class="process-item">
-        <p>
-          پس از مراجعه کاربر ، طلای افراد توسط کارشناس زرین وام کارشناسی شده و در صورت تایید ، مشخصات طلا و اطلاعات هویتی کاربر توسط کارشناس ، در سایت ثبت میشود.
-        </p>
-      </div>
 
       <div class="process-item">
+
         <p>
-          طلای تودیع شده کاربران از ۴۸ تا نهایت ۷۲ ساعت نزد شعب بطور امانی قرار می‌گیرد و پس از تایید و طی امورات اداری ، نماینده پلتفرم نسبت به جمع آوری و انتقال به صندوق امانت بانکی اقدام می‌کند.
+          پس از مراجعه کاربر ، طلای افراد توسط کارشناس زرین وام کارشناسی شده و در صورت تایید ، مشخصات طلا و اطلاعات هویتی کاربر توسط کارشناس ، در سایت ثبت میشود .
         </p>
+
+      </div>
+
+
+      <div class="process-item">
+
+        <p>
+          طلای تودیع شده کاربران از ۴۸ تا نهایت ۷۲ ساعت نزد شعب بطور امانی قرار می‌گیرد و پس از تایید و طی امورات اداری ، نماینده پلتفرم نسبت به جمع آوری و انتقال به صندوق امانت بانکی اقدام می‌کند .
+        </p>
+
       </div>
 
     </div>
@@ -626,45 +886,57 @@
   </section>
 
 
+  <!-- =========================
+       WAVE
+  ========================== -->
+
   <div class="wave-section"></div>
 
 
+  <!-- =========================
+       INCOME
+  ========================== -->
+
   <section id="income">
 
-    <div class="income-box">
+    <h2>
+      حق الزحمه و درآمد دریافتی شعب
+    </h2>
 
-      <h2>حق الزحمه و درآمد دریافتی شعب</h2>
+    <div class="income-box">
 
       <p>
         حق الزحمه و درآمد دریافتی شعب برای انجام این ۲ وظیفه اصلی است:
       </p>
 
-      <div class="income-list">
+      <ul class="income-list">
 
-        <div class="income-item">
-          <p>
-            کارشناسی طلا و ثبت مشخصات طلای تایید شده
-          </p>
-        </div>
+        <li>
+          کارشناسی طلا و ثبت مشخصات طلای تایید شده
+        </li>
 
-        <div class="income-item">
-          <p>
-            ثبت اطلاعات هویتی و شناسایی کاربر در سیستم
-          </p>
-        </div>
+        <li>
+          ثبت اطلاعات هویتی و شناسایی کاربر در سیستم
+        </li>
 
-      </div>
+      </ul>
 
     </div>
 
   </section>
 
 
+  <!-- =========================
+       COOPERATION
+  ========================== -->
+
   <section id="cooperation">
 
     <div class="cooperation-box">
 
-      <h2>ورود به فرم همکاری</h2>
+      <h2>
+        ورود به فرم همکاری
+      </h2>
 
       <p>
         با شرکت در این فرم همکاری ، تعهد و مسئولیت قانونی ای برای طرفین ایجاد نمی‌شود .
@@ -673,8 +945,8 @@
 
       <a
         href="#"
-        class="enter-button"
-        onclick="alert('لینک فرم همکاری هنوز متصل نشده است.'); return false;"
+        class="enter-btn"
+        onclick="showFormMessage(event)"
       >
         ورود
       </a>
@@ -684,241 +956,305 @@
   </section>
 
 
+  <!-- =========================
+       SECURITY
+  ========================== -->
+
   <section id="security">
 
-    <div class="security-box">
+    <div class="security-icon">
 
-      <div class="security-icon">
+      <svg
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="آیکون امنیت"
+      >
 
-        <svg
-          viewBox="0 0 100 100"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-label="آیکون امنیت"
-        >
+        <defs>
 
-          <defs>
+          <linearGradient
+            id="goldShield"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
 
-            <linearGradient
-              id="goldShield"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="100%"
-            >
-              <stop offset="0%" stop-color="#fff1a8"/>
-              <stop offset="35%" stop-color="#d4af37"/>
-              <stop offset="70%" stop-color="#f5d76e"/>
-              <stop offset="100%" stop-color="#a67c00"/>
-            </linearGradient>
+            <stop
+              offset="0%"
+              stop-color="#fff1a8"
+            />
 
-            <filter
-              id="shieldGlow"
-              x="-50%"
-              y="-50%"
-              width="200%"
-              height="200%"
-            >
-              <feGaussianBlur
-                stdDeviation="2.5"
-                result="blur"
-              />
+            <stop
+              offset="35%"
+              stop-color="#d4af37"
+            />
 
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
+            <stop
+              offset="70%"
+              stop-color="#f5d76e"
+            />
 
-            </filter>
+            <stop
+              offset="100%"
+              stop-color="#a67c00"
+            />
 
-          </defs>
-
-          <path
-            d="
-              M50 7
-              L82 19
-              V43
-              C82 64 69 82 50 92
-              C31 82 18 64 18 43
-              V19
-              Z
-            "
-            fill="rgba(212,175,55,0.12)"
-            stroke="url(#goldShield)"
-            stroke-width="4"
-            filter="url(#shieldGlow)"
-          />
-
-          <path
-            d="
-              M50 17
-              L72 25
-              V43
-              C72 58 63 72 50 80
-              C37 72 28 58 28 43
-              V25
-              Z
-            "
-            fill="none"
-            stroke="#d4af37"
-            stroke-width="2"
-            opacity="0.7"
-          />
-
-          <path
-            d="
-              M35 48
-              L45 58
-              L66 37
-            "
-            fill="none"
-            stroke="#f8e7a0"
-            stroke-width="5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-
-        </svg>
-
-      </div>
+          </linearGradient>
 
 
-      <h2>۲ لایه امنیتی و حقوقی</h2>
+          <filter
+            id="shieldGlow"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
 
-      <p>
-        یکی از اهداف اصلی زرین وام ، ایجاد سازوکار های مطمئن و اصولی
-        برای جلوگیری از هرگونه ضرر و زیان و مشکلات حقوقی بخصوص برای شعب است .
-        در همین راستا هنگام پذیرش طلای کاربران بعنوان وثیقه ، علاوه بر کارشناسی
-        و اطمینان از اصالت طلا ، هویت کاربر با استفاده از ابزار های متصل به سامانه های دولتی ،
-        اعتبارسنجی می‌شود .
-      </p>
+            <feGaussianBlur
+              stdDeviation="2.5"
+              result="blur"
+            />
 
-      <p>
-        ثبت و اطمینان از هویت کاربر می‌تواند از تقلب و سو استفاده های احتمالی
-        و ضرر و زیان های وارده از آن حتی در اینده ، تا حد زیادی جلوگیری کند .
-      </p>
+            <feMerge>
 
-      <p>
-        علاوه بر اعتبار سنجی کاربر توسط شعب ، اطلاعات کاربران توسط زرین وام
-        بطور کامل و مطمئن تایید می‌شود و این فرایند از ۲ لایه امنیتی عبور می‌کند
-        و با الزام ثبت و تأیید هویت کاربر ، افراد سودجو و کلاهبردار از ورود به سیستم
-        و ایجاد مشکلات حقوقی از همان لحظه اول منصرف می‌شوند .
-      </p>
+              <feMergeNode in="blur"/>
+
+              <feMergeNode in="SourceGraphic"/>
+
+            </feMerge>
+
+          </filter>
+
+        </defs>
+
+
+        <!-- سپر اصلی -->
+
+        <path
+          d="
+            M50 7
+            L82 19
+            V43
+            C82 64 69 82 50 92
+            C31 82 18 64 18 43
+            V19
+            Z
+          "
+          fill="rgba(212,175,55,0.12)"
+          stroke="url(#goldShield)"
+          stroke-width="4"
+          filter="url(#shieldGlow)"
+        />
+
+
+        <!-- لایه داخلی سپر -->
+
+        <path
+          d="
+            M50 17
+            L72 25
+            V43
+            C72 58 63 72 50 80
+            C37 72 28 58 28 43
+            V25
+            Z
+          "
+          fill="none"
+          stroke="#d4af37"
+          stroke-width="2"
+          opacity="0.7"
+        />
+
+
+        <!-- تیک تأیید -->
+
+        <path
+          d="
+            M35 48
+            L45 58
+            L66 37
+          "
+          fill="none"
+          stroke="#f8e7a0"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+      </svg>
 
     </div>
 
+
+    <h2>
+      ۲ لایه امنیتی و حقوقی
+    </h2>
+
+
+    <p>
+      یکی از اهداف اصلی زرین وام ، ایجاد سازوکار های مطمئن و اصولی
+      برای جلوگیری از هرگونه ضرر و زیان و مشکلات حقوقی بخصوص برای شعب است .
+      در همین راستا هنگام پذیرش طلای کاربران بعنوان وثیقه ، علاوه بر کارشناسی
+      و اطمینان از اصالت طلا ، هویت کاربر با استفاده از ابزار های متصل به سامانه های دولتی ،
+      اعتبارسنجی می‌شود .
+    </p>
+
+
+    <p>
+      ثبت و اطمینان از هویت کاربر می‌تواند از تقلب و سو استفاده های احتمالی
+      و ضرر و زیان های وارده از آن حتی در اینده ، تا حد زیادی جلوگیری کند .
+    </p>
+
+
+    <p>
+      علاوه بر اعتبار سنجی کاربر توسط شعب ، اطلاعات کاربران توسط زرین وام
+      بطور کامل و مطمئن تایید می‌شود و این فرایند از ۲ لایه امنیتی عبور می‌کند
+      و با الزام ثبت و تأیید هویت کاربر ، افراد سودجو و کلاهبردار از ورود به سیستم
+      و ایجاد مشکلات حقوقی از همان لحظه اول منصرف می‌شوند .
+    </p>
+
   </section>
 
+
+  <!-- =========================
+       BENEFITS
+  ========================== -->
 
   <section id="benefits">
 
-    <h2>مزایای همکاری با زرین وام</h2>
+    <h2>
+      مزایای همکاری با زرین وام
+    </h2>
 
-    <div class="benefits-list">
+    <ul class="benefits-list">
 
-      <div class="benefit">
+      <li>
         ایجاد جریان درآمدی مطمئن بدون نیاز به درگیری سرمایه
-      </div>
+      </li>
 
-      <div class="benefit">
+      <li>
         روشی هوشمندانه برای بهبود و پوشش مقدار زیادی از هزینه های جاری و ثابت فروشگاه شما
-      </div>
+      </li>
 
-      <div class="benefit">
+      <li>
         برندینگ و افزایش اعتبار بدلیل قرار گیری فروشگاه بعنوان امین و معتمد پلتفرم
-      </div>
+      </li>
 
-      <div class="benefit">
+      <li>
         کسب درآمد از دانش و تخصص خود
-      </div>
+      </li>
 
-      <div class="benefit">
+      <li>
         استفاده بهینه از زمان و اوقات آزاد
-      </div>
+      </li>
 
-      <div class="benefit">
+      <li>
         ریسک صفر سرمایه در مقابل نوسانات بازار
-      </div>
+      </li>
 
-      <div class="benefit">
+      <li>
         افزایش نرخ ورود یا به اصطلاح پا خور شدن فروشگاه شما
-      </div>
+      </li>
 
-    </div>
+    </ul>
 
   </section>
 
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
+
     <p>
-      زرین وام | درآمد از کارشناسی طلا
+      <strong>زرین وام</strong>
+      | درآمد از کارشناسی طلا
     </p>
+
   </footer>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
 
-    const menuLinks = document.querySelectorAll(".menu a");
+    function showFormMessage(event) {
 
-    const sections = [
-      document.querySelector("#process"),
-      document.querySelector("#income"),
-      document.querySelector("#cooperation")
-    ];
+      event.preventDefault();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
+      alert("لینک فرم همکاری هنوز متصل نشده است.");
 
-        entries.forEach((entry) => {
+    }
 
-          if (entry.isIntersecting) {
 
-            menuLinks.forEach((link) => {
-              link.classList.remove("active");
-            });
+    /* =========================
+       ACTIVE MENU
+    ========================== */
 
-            const activeLink = document.querySelector(
-              `.menu a[href="#${entry.target.id}"]`
-            );
+    const sections =
+      document.querySelectorAll(
+        "#process, #income, #cooperation"
+      );
 
-            if (activeLink) {
-              activeLink.classList.add("active");
+
+    const menuLinks =
+      document.querySelectorAll(
+        ".menu a"
+      );
+
+
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              menuLinks.forEach((link) => {
+
+                link.classList.remove("active");
+
+              });
+
+
+              const activeLink =
+                document.querySelector(
+                  `.menu a[data-target="${entry.target.id}"]`
+                );
+
+
+              if (activeLink) {
+
+                activeLink.classList.add("active");
+
+              }
+
             }
 
-          }
+          });
 
-        });
+        },
 
-      },
-      {
-        threshold: 0.35
-      }
-    );
+        {
+          threshold: 0.45
+        }
+
+      );
 
 
     sections.forEach((section) => {
 
-      if (section) {
-        observer.observe(section);
-      }
-
-    });
-
-
-    menuLinks.forEach((link) => {
-
-      link.addEventListener("click", () => {
-
-        menuLinks.forEach((item) => {
-          item.classList.remove("active");
-        });
-
-        link.classList.add("active");
-
-      });
+      observer.observe(section);
 
     });
 
   </script>
 
 </body>
-  </html>
+</html>
