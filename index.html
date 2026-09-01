@@ -17,7 +17,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 145px;
+            scroll-padding-top: 330px;
         }
 
         body {
@@ -29,6 +29,7 @@
             overflow-x: hidden;
         }
 
+
         /* =========================
            HEADER
         ========================= */
@@ -37,126 +38,206 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+
             background: rgba(12, 12, 10, 0.97);
+
             border-bottom: 1px solid #3d321b;
-            box-shadow: 0 5px 25px rgba(0,0,0,.18);
+
+            box-shadow:
+                0 5px 25px rgba(0,0,0,.18);
+
             backdrop-filter: blur(12px);
         }
+
 
         .header-inner {
             width: min(1150px, 92%);
             margin: auto;
-            padding: 22px 0 16px;
+
+            padding: 20px 0 18px;
+
             text-align: center;
         }
 
+
+        /* =========================
+           MAIN TITLE
+        ========================= */
+
         .main-title {
             font-size: clamp(29px, 5vw, 50px);
+
             line-height: 1.4;
+
             font-weight: 800;
-            margin-bottom: 17px;
+
+            margin-bottom: 20px;
         }
+
 
         .main-title .white {
             color: #ffffff;
         }
 
+
         .main-title .gold {
             color: #e5bd4e;
         }
 
+
         /* =========================
-           QUICK NAV
+           FIXED VERTICAL NAV
         ========================= */
 
         .quick-nav {
-            width: min(1050px, 94%);
+            width: min(600px, 100%);
+
             margin: auto;
+
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            padding-bottom: 4px;
+
+            flex-direction: column;
+
+            gap: 9px;
         }
 
-        .quick-nav::-webkit-scrollbar {
-            display: none;
-        }
 
         .quick-nav a {
-            flex: 0 0 auto;
+
+            display: block;
+
+            width: 100%;
+
             text-decoration: none;
+
             color: #eee6d5;
-            background: #1b1914;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1d1b16,
+                    #15140f
+                );
+
             border: 1px solid #514321;
-            padding: 10px 20px;
+
+            padding: 11px 18px;
+
             border-radius: 11px;
-            font-size: 14px;
+
+            font-size: 15px;
+
             font-weight: bold;
-            transition: all .3s ease;
+
+            line-height: 1.5;
+
+            transition:
+                background .3s ease,
+                color .3s ease,
+                transform .3s ease,
+                box-shadow .3s ease;
         }
 
+
         .quick-nav a:hover {
-            background: #dfb83f;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dfb83f,
+                    #c49a2e
+                );
+
             color: #16130b;
+
             border-color: #dfb83f;
+
             transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 18px rgba(205,164,49,.18);
         }
+
 
         /* =========================
            GENERAL
         ========================= */
 
         .container {
+
             width: min(1100px, 92%);
+
             margin: auto;
         }
 
+
         section {
+
             padding: 78px 0;
-            scroll-margin-top: 145px;
+
+            scroll-margin-top: 330px;
         }
 
+
         .section-title {
+
             text-align: center;
+
             margin-bottom: 38px;
         }
 
+
         .section-title h2 {
-            font-size: clamp(25px, 4vw, 35px);
+
+            font-size:
+                clamp(25px, 4vw, 35px);
+
             color: #29251c;
+
             line-height: 1.7;
+
             font-weight: 800;
         }
 
+
         .gold-line {
+
             width: 65px;
+
             height: 4px;
+
             background: #c99b2e;
+
             margin: 15px auto 0;
+
             border-radius: 10px;
         }
+
 
         /* =========================
            HERO
         ========================= */
 
         .hero {
+
             position: relative;
+
             overflow: hidden;
 
             background:
+
                 radial-gradient(
                     circle at 12% 25%,
                     rgba(218,177,64,.14),
                     transparent 28%
                 ),
+
                 radial-gradient(
                     circle at 88% 75%,
                     rgba(218,177,64,.10),
                     transparent 30%
                 ),
+
                 linear-gradient(
                     135deg,
                     #11100d,
@@ -164,202 +245,336 @@
                 );
 
             color: white;
+
             padding: 82px 0 105px;
         }
 
+
         .hero::before {
+
             content: "";
+
             position: absolute;
+
             width: 500px;
+
             height: 500px;
-            background: rgba(219,182,69,.07);
+
+            background:
+                rgba(219,182,69,.07);
+
             filter: blur(100px);
+
             border-radius: 50%;
+
             top: -250px;
+
             right: -180px;
         }
 
+
         .hero-box {
+
             position: relative;
+
             max-width: 900px;
+
             margin: auto;
+
             text-align: center;
         }
 
+
         .hero-box h2 {
+
             color: #e5bd4e;
-            font-size: clamp(25px, 4vw, 37px);
+
+            font-size:
+                clamp(25px, 4vw, 37px);
+
             margin-bottom: 27px;
+
             line-height: 1.7;
         }
 
+
         .hero-box p {
+
             color: #ddd5c5;
+
             font-size: 17px;
+
             line-height: 2.4;
+
             text-align: justify;
         }
+
 
         /* =========================
            PROCESS
         ========================= */
 
         .process-section {
+
             position: relative;
+
             background: #f1ecdf;
+
             padding-bottom: 110px;
         }
 
+
         .steps {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 20px;
+
             align-items: stretch;
         }
 
+
         .step {
+
             background: #ffffff;
+
             padding: 30px 25px;
+
             border-radius: 20px;
+
             border: 1px solid #e4d9c0;
-            box-shadow: 0 10px 30px rgba(70,55,20,.05);
+
+            box-shadow:
+                0 10px 30px rgba(70,55,20,.05);
+
             display: flex;
+
             flex-direction: column;
-            transition: transform .3s ease, box-shadow .3s ease;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
         }
+
 
         .step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 35px rgba(70,55,20,.09);
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 18px 35px rgba(70,55,20,.09);
         }
 
+
         .step-number {
+
             width: 46px;
+
             height: 46px;
+
             background: #17150f;
+
             color: #e5bd4e;
+
             display: grid;
+
             place-items: center;
+
             border-radius: 12px;
+
             font-size: 19px;
+
             font-weight: bold;
+
             margin-bottom: 18px;
+
             flex-shrink: 0;
         }
 
+
         .step p {
+
             color: #514b40;
+
             font-size: 16px;
+
             line-height: 2.2;
+
             text-align: justify;
         }
+
 
         /* =========================
            SOFT WAVE
         ========================= */
 
         .next-transition {
+
             position: relative;
+
             height: 170px;
+
             margin-top: -1px;
+
             overflow: hidden;
+
             background: #f1ecdf;
         }
 
+
         .next-transition::before {
+
             content: "";
+
             position: absolute;
 
             width: 700px;
+
             height: 260px;
 
             right: -180px;
+
             top: -100px;
 
-            background: rgba(211,174,67,.13);
+            background:
+                rgba(211,174,67,.13);
+
             border-radius: 50%;
 
             filter: blur(70px);
 
-            animation: softMove 9s ease-in-out infinite alternate;
+            animation:
+                softMove 9s ease-in-out infinite alternate;
         }
 
+
         .next-transition::after {
+
             content: "";
+
             position: absolute;
 
             width: 600px;
+
             height: 220px;
 
             left: -170px;
+
             bottom: -100px;
 
-            background: rgba(180,151,75,.08);
+            background:
+                rgba(180,151,75,.08);
+
             border-radius: 50%;
 
             filter: blur(80px);
 
-            animation: softMoveReverse 11s ease-in-out infinite alternate;
+            animation:
+                softMoveReverse
+                11s ease-in-out
+                infinite alternate;
         }
+
 
         @keyframes softMove {
 
             from {
-                transform: translateX(0) translateY(0) scale(1);
+                transform:
+                    translateX(0)
+                    translateY(0)
+                    scale(1);
             }
 
             to {
-                transform: translateX(-80px) translateY(25px) scale(1.12);
+                transform:
+                    translateX(-80px)
+                    translateY(25px)
+                    scale(1.12);
             }
-
         }
+
 
         @keyframes softMoveReverse {
 
             from {
-                transform: translateX(0) translateY(0) scale(1);
+                transform:
+                    translateX(0)
+                    translateY(0)
+                    scale(1);
             }
 
             to {
-                transform: translateX(70px) translateY(-25px) scale(1.1);
+                transform:
+                    translateX(70px)
+                    translateY(-25px)
+                    scale(1.1);
             }
-
         }
 
+
         .wave {
+
             position: absolute;
+
             left: -5%;
+
             width: 110%;
+
             height: 130px;
+
             background: #11100d;
-            border-radius: 50% 50% 0 0 / 35% 35% 0 0;
+
+            border-radius:
+                50% 50% 0 0 /
+                35% 35% 0 0;
+
             bottom: -95px;
         }
 
+
         .wave.second {
+
             height: 105px;
+
             background: #1a1813;
+
             bottom: -82px;
+
             opacity: .75;
         }
+
 
         /* =========================
            INCOME
         ========================= */
 
         .income-section {
+
             background: #11100d;
+
             color: white;
+
             padding-top: 75px;
+
             padding-bottom: 95px;
         }
 
-        .income-section .section-title h2 {
+
+        .income-section
+        .section-title h2 {
+
             color: white;
         }
 
+
         .income-box {
+
             max-width: 850px;
+
             margin: auto;
 
             background: #1b1914;
@@ -370,42 +585,64 @@
 
             padding: 35px;
 
-            box-shadow: 0 15px 40px rgba(0,0,0,.15);
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.15);
         }
 
+
         .income-box p {
+
             color: #d9d0bf;
+
             margin-bottom: 25px;
+
             font-size: 17px;
+
             line-height: 2.2;
+
             text-align: justify;
         }
 
+
         .income-list {
+
             list-style: none;
         }
 
+
         .income-list li {
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(226,190,77,.15);
+
+            background:
+                rgba(255,255,255,.04);
+
+            border:
+                1px solid
+                rgba(226,190,77,.15);
+
             border-radius: 12px;
+
             padding: 15px 18px;
+
             margin-bottom: 12px;
 
             color: #eee5d4;
 
             font-size: 16px;
+
             line-height: 2;
 
             text-align: justify;
         }
 
+
         .income-list li::before {
+
             content: "";
 
             display: inline-block;
 
             width: 7px;
+
             height: 7px;
 
             background: #e2bb4a;
@@ -417,17 +654,28 @@
             vertical-align: middle;
         }
 
+
         /* =========================
            COOPERATION
         ========================= */
 
         .cooperation-section {
-            background: linear-gradient(135deg,#f7f1df,#eee4ca);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f7f1df,
+                    #eee4ca
+                );
+
             padding-top: 70px;
         }
 
+
         .cooperation-box {
+
             max-width: 850px;
+
             margin: auto;
 
             text-align: center;
@@ -438,12 +686,16 @@
 
             border-radius: 22px;
 
-            border: 1px solid #e1d2ae;
+            border:
+                1px solid #e1d2ae;
 
-            box-shadow: 0 15px 40px rgba(70,55,20,.08);
+            box-shadow:
+                0 15px 40px rgba(70,55,20,.08);
         }
 
+
         .cooperation-box p {
+
             color: #555044;
 
             font-size: 16px;
@@ -453,7 +705,9 @@
             text-align: justify;
         }
 
+
         .enter-button {
+
             display: inline-block;
 
             margin-top: 28px;
@@ -462,11 +716,12 @@
 
             border-radius: 12px;
 
-            background: linear-gradient(
-                135deg,
-                #e9c75d,
-                #b98620
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #e9c75d,
+                    #b98620
+                );
 
             color: #17130a;
 
@@ -476,33 +731,48 @@
 
             font-size: 16px;
 
-            box-shadow: 0 8px 20px rgba(170,125,25,.2);
+            box-shadow:
+                0 8px 20px
+                rgba(170,125,25,.2);
 
             transition: all .3s ease;
         }
 
+
         .enter-button:hover {
-            transform: translateY(-3px);
+
+            transform:
+                translateY(-3px);
 
             box-shadow:
-                0 13px 28px rgba(170,125,25,.3);
+                0 13px 28px
+                rgba(170,125,25,.3);
         }
+
 
         /* =========================
            SECURITY
         ========================= */
 
         .security-section {
+
             background: #15130e;
+
             color: white;
         }
 
-        .security-section .section-title h2 {
+
+        .security-section
+        .section-title h2 {
+
             color: white;
         }
+
 
         .security-box {
+
             max-width: 950px;
+
             margin: auto;
 
             background: #201d16;
@@ -514,7 +784,9 @@
             padding: 40px;
         }
 
+
         .security-box p {
+
             color: #d7cebd;
 
             font-size: 16px;
@@ -526,26 +798,34 @@
             text-align: justify;
         }
 
+
         /* =========================
            BENEFITS
         ========================= */
 
         .benefits-section {
+
             background: #f1ecdf;
         }
 
+
         .benefits {
+
             display: grid;
 
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns:
+                repeat(2,1fr);
 
             gap: 15px;
         }
 
+
         .benefit {
+
             background: white;
 
-            border: 1px solid #e2d7bf;
+            border:
+                1px solid #e2d7bf;
 
             border-radius: 15px;
 
@@ -559,15 +839,20 @@
 
             text-align: justify;
 
-            box-shadow: 0 7px 20px rgba(60,50,25,.035);
+            box-shadow:
+                0 7px 20px
+                rgba(60,50,25,.035);
         }
 
+
         .benefit::before {
+
             content: "";
 
             display: inline-block;
 
             width: 7px;
+
             height: 7px;
 
             background: #b27f19;
@@ -579,11 +864,13 @@
             vertical-align: middle;
         }
 
+
         /* =========================
            FOOTER
         ========================= */
 
         footer {
+
             background: #080807;
 
             color: #aaa291;
@@ -593,11 +880,14 @@
             padding: 30px 15px;
         }
 
+
         footer strong {
+
             color: #e3bd50;
 
             font-size: 20px;
         }
+
 
         /* =========================
            MOBILE
@@ -609,41 +899,75 @@
                 font-size: 15px;
             }
 
+
             .header-inner {
-                padding: 18px 0 14px;
+                padding:
+                    16px 0 15px;
             }
+
 
             .main-title {
+
                 font-size: 27px;
-                margin-bottom: 14px;
+
+                margin-bottom: 16px;
             }
+
 
             .quick-nav {
-                justify-content: flex-start;
+
+                width: 100%;
+
+                gap: 7px;
             }
+
 
             .quick-nav a {
+
                 font-size: 13px;
-                padding: 9px 14px;
+
+                padding:
+                    9px 12px;
             }
+
+
+            html {
+
+                scroll-padding-top:
+                    285px;
+            }
+
 
             section {
+
                 padding: 58px 0;
-                scroll-margin-top: 125px;
+
+                scroll-margin-top:
+                    285px;
             }
+
 
             .hero {
-                padding: 62px 0 80px;
+
+                padding:
+                    62px 0 80px;
             }
 
+
             .hero-box p {
+
                 font-size: 15px;
+
                 line-height: 2.25;
             }
 
+
             .steps {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
+
 
             .step p,
             .income-box p,
@@ -651,26 +975,39 @@
             .benefit,
             .cooperation-box p,
             .security-box p {
+
                 font-size: 15px;
+
                 line-height: 2.15;
             }
+
 
             .income-box,
             .cooperation-box,
             .security-box {
-                padding: 25px 20px;
+
+                padding:
+                    25px 20px;
             }
+
 
             .benefits {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
+
             .next-transition {
+
                 height: 140px;
             }
 
+
             .wave {
+
                 height: 110px;
+
                 bottom: -85px;
             }
 
@@ -692,6 +1029,7 @@
 
     <div class="header-inner">
 
+
         <div class="main-title">
 
             <span class="white">
@@ -705,21 +1043,29 @@
         </div>
 
 
+        <!--
+            سه گزینه به صورت عمودی
+            و همیشه قابل مشاهده
+        -->
+
         <nav class="quick-nav">
 
             <a href="#process">
                 نحوه کار زرین وام
             </a>
 
+
             <a href="#income">
                 درآمد و کمیسیون شعب
             </a>
+
 
             <a href="#cooperation">
                 ورود به فرم همکاری
             </a>
 
         </nav>
+
 
     </div>
 
@@ -736,9 +1082,11 @@
 
         <div class="hero-box">
 
+
             <h2>
                 معرفی زرین وام و جذب کارشناس طلا
             </h2>
+
 
             <p>
 
@@ -748,6 +1096,7 @@
                 با استفاده از تخصص و دانش خود و کارشناسی طلای کاربران ، به درآمد بدون نیاز به درگیری سرمایه برسید .
 
             </p>
+
 
         </div>
 
@@ -763,6 +1112,7 @@
 <section class="process-section" id="process">
 
     <div class="container">
+
 
         <div class="section-title">
 
@@ -784,6 +1134,7 @@
                     ۱
                 </div>
 
+
                 <p>
 
                     متقاضی وام ، برای ثبت نام و کارشناسی طلای خود ،
@@ -800,6 +1151,7 @@
                     ۲
                 </div>
 
+
                 <p>
 
                     پس از مراجعه کاربر ، طلای افراد توسط کارشناس زرین وام کارشناسی شده
@@ -815,6 +1167,7 @@
                 <div class="step-number">
                     ۳
                 </div>
+
 
                 <p>
 
@@ -835,7 +1188,7 @@
 
 
 <!-- =========================
-     SOFT TRANSITION
+     SOFT WAVE
 ========================= -->
 
 <div class="next-transition">
@@ -855,6 +1208,7 @@
 
     <div class="container">
 
+
         <div class="section-title">
 
             <h2>
@@ -868,22 +1222,29 @@
 
         <div class="income-box">
 
+
             <p>
+
                 حق الزحمه و درآمد دریافتی شعب برای انجام این ۲ وظیفه اصلی است:
+
             </p>
 
 
             <ul class="income-list">
 
+
                 <li>
                     کارشناسی طلا و ثبت مشخصات طلای تایید شده
                 </li>
+
 
                 <li>
                     ثبت اطلاعات هویتی و شناسایی کاربر در سیستم
                 </li>
 
+
             </ul>
+
 
         </div>
 
@@ -900,6 +1261,7 @@
 
     <div class="container">
 
+
         <div class="section-title">
 
             <h2>
@@ -913,6 +1275,7 @@
 
         <div class="cooperation-box">
 
+
             <p>
 
                 با شرکت در این فرم همکاری ، تعهد و مسئولیت قانونی ای برای طرفین ایجاد نمی‌شود .
@@ -921,13 +1284,16 @@
             </p>
 
 
-            <a href="#"
-               class="enter-button"
-               onclick="alert('لینک فرم همکاری هنوز متصل نشده است.'); return false;">
+            <a
+                href="#"
+                class="enter-button"
+                onclick="alert('لینک فرم همکاری هنوز متصل نشده است.'); return false;"
+            >
 
                 ورود
 
             </a>
+
 
         </div>
 
@@ -944,6 +1310,7 @@
 
     <div class="container">
 
+
         <div class="section-title">
 
             <h2>
@@ -956,6 +1323,7 @@
 
 
         <div class="security-box">
+
 
             <p>
 
@@ -985,6 +1353,7 @@
 
             </p>
 
+
         </div>
 
     </div>
@@ -1000,6 +1369,7 @@
 
     <div class="container">
 
+
         <div class="section-title">
 
             <h2>
@@ -1013,33 +1383,41 @@
 
         <div class="benefits">
 
+
             <div class="benefit">
                 ایجاد جریان درآمدی مطمئن بدون نیاز به درگیری سرمایه
             </div>
+
 
             <div class="benefit">
                 روشی هوشمندانه برای بهبود و پوشش مقدار زیادی از هزینه های جاری و ثابت فروشگاه شما
             </div>
 
+
             <div class="benefit">
                 برندینگ و افزایش اعتبار بدلیل قرار گیری فروشگاه بعنوان امین و معتمد پلتفرم
             </div>
+
 
             <div class="benefit">
                 کسب درآمد از دانش و تخصص خود
             </div>
 
+
             <div class="benefit">
                 استفاده بهینه از زمان و اوقات آزاد
             </div>
+
 
             <div class="benefit">
                 ریسک صفر سرمایه در مقابل نوسانات بازار
             </div>
 
+
             <div class="benefit">
                 افزایش نرخ ورود یا به اصطلاح پا خور شدن فروشگاه شما
             </div>
+
 
         </div>
 
@@ -1058,6 +1436,7 @@
         زرین وام
     </strong>
 
+
     <p>
         درآمد از کارشناسی طلا
     </p>
@@ -1067,4 +1446,4 @@
 
 </body>
 
-    </html>
+</html>
