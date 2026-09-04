@@ -67,10 +67,6 @@
       color: #d4af37;
     }
 
-    /* =========================
-       HEADER ANIMATIONS
-    ========================== */
-
     @keyframes headerPulse {
       0%, 100% {
         transform: scale(0.95);
@@ -269,7 +265,6 @@
     }
 
     @keyframes menuWave {
-
       0% {
         transform:
           translateX(0)
@@ -290,11 +285,9 @@
           rotate(-8deg);
         opacity: 0.25;
       }
-
     }
 
     @keyframes menuLight {
-
       0% {
         right: -90%;
         opacity: 0;
@@ -317,7 +310,6 @@
         right: 110%;
         opacity: 0;
       }
-
     }
 
     .menu a:hover {
@@ -427,7 +419,6 @@
     }
 
     @keyframes largeWave {
-
       0%, 100% {
         transform:
           translateX(-2%)
@@ -439,7 +430,6 @@
           translateX(2%)
           rotate(2deg);
       }
-
     }
 
     /* =========================
@@ -581,7 +571,6 @@
     }
 
     @keyframes shieldFloat {
-
       0%, 100% {
         transform: translateY(0);
       }
@@ -589,7 +578,6 @@
       50% {
         transform: translateY(-5px);
       }
-
     }
 
     /* =========================
@@ -748,7 +736,7 @@
   </header>  <!-- =========================
        INTRODUCTION
   ========================== -->  <section id="introduction"><h2>
-  معرفی زرین‌وام و جذب کارشناس طلا
+  معرفی زرین وام و جذب کارشناس طلا
 </h2>
 
 <p>
@@ -759,7 +747,6 @@
 
   </section>  <!-- =========================
        GUIDE
-       دقیقا قبل از سه گزینه
   ========================== -->  <div class="guide-wrapper"><div class="guide">
 
   برای مطالعه هر قسمت کلیک کنید
@@ -774,24 +761,15 @@
        STICKY MENU
   ========================== -->  <div class="menu-wrapper"><nav class="menu">
 
-  <a
-    href="#process"
-    data-target="process"
-  >
+  <a href="#process" data-target="process">
     نحوه کار زرین وام
   </a>
 
-  <a
-    href="#income"
-    data-target="income"
-  >
+  <a href="#income" data-target="income">
     درآمد و کمیسیون شعب
   </a>
 
-  <a
-    href="#cooperation"
-    data-target="cooperation"
-  >
+  <a href="#cooperation" data-target="cooperation">
     ورود به فرم همکاری
   </a>
 
@@ -838,26 +816,30 @@
   ========================== -->  <div class="wave-section"></div>  <!-- =========================
        INCOME
   ========================== -->  <section id="income"><h2>
-  حق الزحمه و درآمد دریافتی شعب
+  کارمزد شعب
 </h2>
 
 <div class="income-box">
 
   <p>
-    حق الزحمه و درآمد دریافتی شعب برای انجام این ۲ وظیفه اصلی است:
+    شما بابت انجام این دو وظیفه، کارمزد دریافت می‌کنید:
   </p>
 
   <ul class="income-list">
 
     <li>
-      کارشناسی طلا و ثبت مشخصات طلای تایید شده
+      کارشناسی طلا و ثبت مشخصات طلای تأییدشده
     </li>
 
     <li>
-      ثبت اطلاعات هویتی و شناسایی کاربر در سیستم
+      ثبت اطلاعات هویتی و شناسایی کاربر در سامانه
     </li>
 
   </ul>
+
+  <p style="text-align: justify; margin-top: 22px;">
+    نکته: این فرم، مرحله اولیه بررسی همکاری است. در این مرحله، مبلغ پیشنهادی شما برای انجام این وظایف دریافت می‌شود تا در تعیین میزان کارمزد همکاری مورد بررسی قرار گیرد. مبلغ نهایی کارمزد پس از بررسی پیشنهادها و تعیین شرایط همکاری اعلام خواهد شد.
+  </p>
 
 </div>
 
@@ -877,8 +859,6 @@
   <a
     href="https://tally.so/r/9qK4WK"
     class="enter-btn"
-    target="_blank"
-    rel="noopener noreferrer"
   >
     ورود
   </a>
@@ -905,28 +885,12 @@
         y2="100%"
       >
 
-        <stop
-          offset="0%"
-          stop-color="#fff1a8"
-        />
-
-        <stop
-          offset="35%"
-          stop-color="#d4af37"
-        />
-
-        <stop
-          offset="70%"
-          stop-color="#f5d76e"
-        />
-
-        <stop
-          offset="100%"
-          stop-color="#a67c00"
-        />
+        <stop offset="0%" stop-color="#fff1a8"/>
+        <stop offset="35%" stop-color="#d4af37"/>
+        <stop offset="70%" stop-color="#f5d76e"/>
+        <stop offset="100%" stop-color="#a67c00"/>
 
       </linearGradient>
-
 
       <filter
         id="shieldGlow"
@@ -944,7 +908,6 @@
         <feMerge>
 
           <feMergeNode in="blur"/>
-
           <feMergeNode in="SourceGraphic"/>
 
         </feMerge>
@@ -953,8 +916,6 @@
 
     </defs>
 
-
-    <!-- سپر اصلی -->
 
     <path
       d="
@@ -973,8 +934,6 @@
     />
 
 
-    <!-- لایه داخلی سپر -->
-
     <path
       d="
         M50 17
@@ -991,8 +950,6 @@
       opacity="0.7"
     />
 
-
-    <!-- تیک تأیید -->
 
     <path
       d="
@@ -1087,10 +1044,6 @@
   </footer>  <!-- =========================
        JAVASCRIPT
   ========================== -->  <script>
-
-    /* =========================
-       ACTIVE MENU
-    ========================== */
 
     const sections =
       document.querySelectorAll(
