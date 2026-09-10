@@ -1143,7 +1143,10 @@
         gtag(
           "event",
           eventName,
-          parameters
+          {
+            ...parameters,
+            transport_type: "beacon"
+          }
         );
 
       }
@@ -1210,27 +1213,28 @@
        FORM BUTTON CLICK
     ========================== */
 
-    const cooperationButton =
-      document.querySelector(".enter-btn");
+    document.addEventListener(
+      "click",
+      function (event) {
 
-    if (cooperationButton) {
+        const cooperationButton =
+          event.target.closest(".enter-btn");
 
-      cooperationButton.addEventListener(
-        "click",
-        function () {
-
-          sendAnalyticsEvent(
-            "cooperation_form_click",
-            {
-              button_name: "ورود به فرم همکاری",
-              destination: "Tally"
-            }
-          );
-
+        if (!cooperationButton) {
+          return;
         }
-      );
 
-    }
+        sendAnalyticsEvent(
+          "cooperation_form_click",
+          {
+            button_name: "ورود به فرم همکاری",
+            destination: "Tally"
+          }
+        );
+
+      },
+      true
+    );
 
 
     /* =========================
@@ -1325,6 +1329,12 @@
         link.addEventListener(
           "click",
           function () {
+
+            if (
+              this.classList.contains("enter-btn")
+            ) {
+              return;
+            }
 
             const url =
               this.href;
@@ -1448,4 +1458,4 @@
   </script>
 
 </body>
-</html>
+  </html>
