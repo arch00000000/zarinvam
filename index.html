@@ -6,20 +6,6 @@
 
   <title>زرین وام | درآمد از کارشناسی طلا</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8X7TDZ6CB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-D8X7TDZ6CB');
-  </script>
-
   <style>
     * {
       box-sizing: border-box;
@@ -758,6 +744,10 @@
 
     }
   </style>
+
+  <script data-goatcounter="https://zarinvam.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
 </head>
 
 <body>
@@ -775,9 +765,7 @@
     </h2>
 
     <p>
-      زرین‌وام، کسب‌وکاری نوآورانه با ایده ارائه وام اعتباری بر پایه سپرده طلاست. بدیهی است پذیرش طلای کاربران نیازمند کارشناسی، تأیید اصالت و تعیین ارزش مالی آن است.
-      زرین‌وام برای پیشبرد حرفه‌ای، دقیق و قانونی اهداف خود، شرایطی را فراهم کرده است تا شما فعالان حوزه طلا بتوانید با تکیه بر تخصص، تجربه و دانش خود در زمینه کارشناسی طلا، به درآمدی جدید و پایدار دست پیدا کنید.
-      به این ترتیب، تخصص و تجربه شما می‌تواند به یک منبع درآمد جدید و پایدار تبدیل شود.
+      زرین‌وام، کسب‌وکاری نوآورانه با ایده ارائه وام اعتباری بر پایه سپرده طلاست. بدیهی است پذیرش طلای کاربران نیاز به کارشناسی، تأیید اصالت و تعیین ارزش مالی آن دارد . زرین‌وام برای پیشبرد حرفه‌ای، دقیق و قانونی اهداف خود، شرایطی را فراهم کرده است تا شما فعالان حوزه طلا با تکیه بر تخصص، تجربه و دانش خود در زمینه کارشناسی طلا، به درآمدی جدید و پایدار دست پیدا کنید. به این ترتیب، تخصص و تجربه شما می‌تواند به یک منبع درآمد جدید و پایدار تبدیل شود.
     </p>
   </section>
 
@@ -827,7 +815,7 @@
 
       <div class="process-item">
         <p>
-          طلای تودیعی پس از انجام کارشناسی و تأیید آن توسط شعبه، به‌صورت امانی برای مدت ۴۸ تا حداکثر ۷۲ ساعت نزد شعبه نگهداری می‌شود. پس از تکمیل مراحل تأیید و فرآیند مربوطه، نماینده زرین‌وام با مراجعه به شعبه، طلای کاربران را دریافت کرده و برای نگهداری به صندوق امانات بانکی منتقل می‌کند.
+          طلای تودیعی پس از انجام کارشناسی و تأیید آن توسط شعبه ، به‌صورت امانی برای مدت ۴۸ تا حداکثر ۷۲ ساعت نزد شعبه نگهداری می‌شود. پس از تکمیل مراحل تأیید و فرآیند مربوطه، نماینده زرین‌وام با مراجعه به شعبه، طلای کاربران را دریافت کرده و برای نگهداری به صندوق امانات بانکی منتقل می‌کند.
         </p>
       </div>
 
@@ -883,6 +871,7 @@
       <a
         href="https://tally.so/r/9qK4WK"
         class="enter-btn"
+        data-goatcounter-click="cooperation_form_click"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -1079,10 +1068,6 @@
 
   <script>
 
-    /* =========================
-       MENU ACTIVE STATE
-    ========================== */
-
     const sections =
       document.querySelectorAll(
         "#process, #income, #cooperation"
@@ -1130,329 +1115,6 @@
     sections.forEach((section) => {
       observer.observe(section);
     });
-
-
-    /* =========================
-       GOOGLE ANALYTICS EVENTS
-    ========================== */
-
-    function sendAnalyticsEvent(eventName, parameters = {}) {
-
-      if (typeof gtag === "function") {
-
-        gtag(
-          "event",
-          eventName,
-          {
-            ...parameters,
-            transport_type: "beacon"
-          }
-        );
-
-      }
-
-    }
-
-
-    /* =========================
-       SCROLL TRACKING
-       25 / 50 / 75 / 90 / 100
-    ========================== */
-
-    const scrollMarks = [25, 50, 75, 90, 100];
-
-    const reachedScrollMarks = new Set();
-
-    function trackScrollDepth() {
-
-      const documentHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-      if (documentHeight <= 0) {
-        return;
-      }
-
-      const scrollPercentage =
-        Math.round(
-          (window.scrollY / documentHeight) * 100
-        );
-
-      scrollMarks.forEach((mark) => {
-
-        if (
-          scrollPercentage >= mark &&
-          !reachedScrollMarks.has(mark)
-        ) {
-
-          reachedScrollMarks.add(mark);
-
-          sendAnalyticsEvent(
-            "scroll_depth",
-            {
-              percent_scrolled: mark
-            }
-          );
-
-        }
-
-      });
-
-    }
-
-    window.addEventListener(
-      "scroll",
-      trackScrollDepth,
-      {
-        passive: true
-      }
-    );
-
-
-    /* =========================
-       FORM BUTTON CLICK
-    ========================== */
-
-    const cooperationButton =
-      document.querySelector(".enter-btn");
-
-    if (cooperationButton) {
-
-      cooperationButton.addEventListener(
-        "click",
-        function () {
-
-          sendAnalyticsEvent(
-            "cooperation_form_click",
-            {
-              button_name: "ورود به فرم همکاری",
-              destination: "Tally"
-            }
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =========================
-       MENU CLICK TRACKING
-    ========================== */
-
-    menuLinks.forEach((link) => {
-
-      link.addEventListener(
-        "click",
-        function () {
-
-          const target =
-            this.getAttribute("data-target");
-
-          sendAnalyticsEvent(
-            "menu_click",
-            {
-              menu_item: target
-            }
-          );
-
-        }
-      );
-
-    });
-
-
-    /* =========================
-       SECTION VIEW TRACKING
-    ========================== */
-
-    const trackedSections =
-      document.querySelectorAll(
-        "#introduction, #process, #income, #cooperation, #security, #benefits"
-      );
-
-    const viewedSections =
-      new Set();
-
-    const sectionObserver =
-      new IntersectionObserver(
-
-        (entries) => {
-
-          entries.forEach((entry) => {
-
-            if (
-              entry.isIntersecting &&
-              !viewedSections.has(entry.target.id)
-            ) {
-
-              viewedSections.add(
-                entry.target.id
-              );
-
-              sendAnalyticsEvent(
-                "section_view",
-                {
-                  section_name:
-                    entry.target.id
-                }
-              );
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.5
-        }
-
-      );
-
-    trackedSections.forEach((section) => {
-      sectionObserver.observe(section);
-    });
-
-
-    /* =========================
-       OUTBOUND LINK TRACKING
-    ========================== */
-
-    document
-      .querySelectorAll(
-        'a[href^="http"]'
-      )
-      .forEach((link) => {
-
-        link.addEventListener(
-          "click",
-          function () {
-
-            if (
-              this.classList.contains("enter-btn")
-            ) {
-              return;
-            }
-
-            const url =
-              this.href;
-
-            sendAnalyticsEvent(
-              "outbound_click",
-              {
-                link_url: url
-              }
-            );
-
-          }
-        );
-
-      });
-
-
-    /* =========================
-       ENGAGEMENT TIME
-       10 / 30 / 60 / 120 SECONDS
-    ========================== */
-
-    const engagementMarks =
-      [10, 30, 60, 120];
-
-    const reachedEngagementMarks =
-      new Set();
-
-    const pageStartTime =
-      Date.now();
-
-    function trackEngagementTime() {
-
-      if (document.hidden) {
-        return;
-      }
-
-      const elapsedSeconds =
-        Math.floor(
-          (Date.now() - pageStartTime) / 1000
-        );
-
-      engagementMarks.forEach((mark) => {
-
-        if (
-          elapsedSeconds >= mark &&
-          !reachedEngagementMarks.has(mark)
-        ) {
-
-          reachedEngagementMarks.add(mark);
-
-          sendAnalyticsEvent(
-            "engagement_time",
-            {
-              seconds_engaged: mark
-            }
-          );
-
-        }
-
-      });
-
-    }
-
-    setInterval(
-      trackEngagementTime,
-      1000
-    );
-
-
-    /* =========================
-       TAB VISIBILITY
-    ========================== */
-
-    document.addEventListener(
-      "visibilitychange",
-      function () {
-
-        if (document.hidden) {
-
-          sendAnalyticsEvent(
-            "page_hidden"
-          );
-
-        } else {
-
-          sendAnalyticsEvent(
-            "page_visible"
-          );
-
-        }
-
-      }
-    );
-
-
-    /* =========================
-       PAGE EXIT
-    ========================== */
-
-    window.addEventListener(
-      "pagehide",
-      function () {
-
-        const totalSeconds =
-          Math.floor(
-            (Date.now() - pageStartTime) / 1000
-          );
-
-        sendAnalyticsEvent(
-          "page_exit",
-          {
-            seconds_on_page:
-              totalSeconds
-          }
-        );
-
-      }
-    );
 
   </script>
 
