@@ -1213,28 +1213,27 @@
        FORM BUTTON CLICK
     ========================== */
 
-    document.addEventListener(
-      "click",
-      function (event) {
+    const cooperationButton =
+      document.querySelector(".enter-btn");
 
-        const cooperationButton =
-          event.target.closest(".enter-btn");
+    if (cooperationButton) {
 
-        if (!cooperationButton) {
-          return;
+      cooperationButton.addEventListener(
+        "click",
+        function () {
+
+          sendAnalyticsEvent(
+            "cooperation_form_click",
+            {
+              button_name: "ورود به فرم همکاری",
+              destination: "Tally"
+            }
+          );
+
         }
+      );
 
-        sendAnalyticsEvent(
-          "cooperation_form_click",
-          {
-            button_name: "ورود به فرم همکاری",
-            destination: "Tally"
-          }
-        );
-
-      },
-      true
-    );
+    }
 
 
     /* =========================
@@ -1458,4 +1457,4 @@
   </script>
 
 </body>
-  </html>
+</html>
